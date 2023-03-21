@@ -20,7 +20,7 @@ VS Code: 1.74.3
 
 
 # 1. Introduction
-The purpose of this repository is to...
+The purpose of this project is to research the iris data set and write code (and) documentation in Python to analyse it.
 
 # 2. Background
 The iris data sheet...
@@ -32,9 +32,6 @@ Using descripting statistics...
 The results are broken down and displayed...
 
 # 5. References
-The results are broken down and displayed...
-
-
 Usefull Links
 #https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 [1] Python Software Foundation. Welcome to python.org. https://www.python.org/. 
@@ -45,7 +42,8 @@ Useful link here
 https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
 
 
-'''
+
+
 #Task suggestions
 1. Research the data set online and write a summary about it in your README.
 2. Download the data set and add it to your repository.
@@ -54,4 +52,4 @@ https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
 2. Saves a histogram of each variable to png files, and
 3. Outputs a scatter plot of each pair of variables.
 4. Performs any other analysis you think is appropriate
-'''
+
