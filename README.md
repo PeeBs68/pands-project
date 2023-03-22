@@ -27,6 +27,7 @@ The iris data sheet...
 
 # 3. Methods
 Using descripting statistics...
+Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 
 # 4. Results
 The results are broken down and displayed...
@@ -40,7 +41,7 @@ UCI Machine Learning
 Repository: Iris Data Set http://archive.ics.uci.edu/ml/datasets/Iris
 Useful link here
 https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
-
+https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/ 
 
 
 
