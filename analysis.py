@@ -29,8 +29,6 @@ Max = iris_csv['Sepal L'].max()
 Min = iris_csv['Sepal L'].min()
 print(f"Min : {Min}, Max : {Max}, Sum : {Total}, Mean : {Mean}")
 
-
-
 #Create the file to store the results
 FILENAME = "analysis.txt"
 
