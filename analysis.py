@@ -37,8 +37,20 @@ def append_results():
      with open(FILENAME, 'a') as f:
           string1 = f.write("Some results...\n")
 
+#stripping data from individual columns
+unique_class = str(iris_csv.Class.unique())
+class1 = iris_csv.Class[0]
+class2 = iris_csv.Class[1]
+class3 = iris_csv.Class[2]
+print (class1)
+
+print (unique_class)
+with open(FILENAME, 'a') as f: #'a' for append
+        string1 = f.write(f"Iris Types : {unique_class}\n")
+        string1 = f.write(f"Min : {Min}, Max : {Max}, Sum : {Total}, Mean : {Mean}")
+
 #Call the functions
-append_results()
+#append_results()
 
 #Or do the append normally
 #with open(FILENAME, 'a') as f: #'a' for append

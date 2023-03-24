@@ -1,0 +1,5 @@
+Iris Types : Iris-setosa
+Iris Types : ['Iris-setosa' 'Iris-versicolor' 'Iris-virginica']
+Iris Types : ['Iris-setosa' 'Iris-versicolor' 'Iris-virginica']
+Iris Types : ['Iris-setosa' 'Iris-versicolor' 'Iris-virginica']
+Min : 4.3, Max : 7.9, Sum : 876.5, Mean : 5.843333333333335
