@@ -50,7 +50,6 @@ def summary_stats():
 #call the summary_stats function
 summary_stats()
 
-
 unique_class = iris_csv.Class.unique()
 
 #Gather individual statistics on each flower type (Class)
@@ -66,6 +65,7 @@ def summary_data(Class):
         Mean = iris_csv[headers1[x]].mean()
         x = x+1
 #        print(f"Min: {Min}")
+        print (Class, headers1[x])
         return (headers1[x], Min, Max, Mean)
 
 for Class in unique_class:
