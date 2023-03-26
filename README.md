@@ -42,6 +42,7 @@ Repository: Iris Data Set http://archive.ics.uci.edu/ml/datasets/Iris
 Useful link here
 https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
 https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/ 
+http://rstudio-pubs-static.s3.amazonaws.com/450733_9a472ce9632f4ffbb2d6175aaaee5be6.html - some analysis
 
 
 
