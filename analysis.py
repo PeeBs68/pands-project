@@ -35,7 +35,7 @@ with open(FILENAME, 'a') as f:
      for_header = f.write("Histogram saved as Sepal_Length_Histogram.png\n\n")
 plt.show()
 
-#To show summary stats using describe() for each Class
+#To show summary stats using describe() for each Class - maybe call this for each iris type
 #with open(FILENAME, 'a') as f:
 #     for_header = f.write(str(iris_csv.groupby("Class").describe()))
 
