@@ -1,4 +1,12 @@
-This fle shows the output of the analysis performd on the iris data set
+This fle shows the output of the analysis performed on the iris data set
 
-Iris Types : ['Iris-setosa' 'Iris-versicolor' 'Iris-virginica']
-Min : 4.3, Max : 7.9, Sum : 876.5, Mean : 5.843333333333335
+Histogram saved as Sepal_Length_Histogram.png
+
+The iris data set contains 150 rows and 5 columns of data to analyse
+
+Iris Type : Iris-setosa
+Attribute : Sepal W, Min : 4.3, Max : 7.9, Sum : 876.5, Mean : 5.843333333333335
+Iris Type : Iris-versicolor
+Attribute : Sepal W, Min : 2.0, Max : 4.4, Sum : 458.1, Mean : 3.0540000000000007
+Iris Type : Iris-virginica
+Attribute : Sepal W, Min : 2.0, Max : 4.4, Sum : 458.1, Mean : 3.0540000000000007
