@@ -37,7 +37,7 @@ plt.show()
 
 #Uncomment this on Monday
 #create a function to gather summary stats on the data set and write to the output file
-def summary_stats():
+'''def summary_stats():
      num_rows = len(iris_csv)
      num_cols = len(iris_csv.columns)
      print (num_rows, num_cols)
@@ -45,11 +45,10 @@ def summary_stats():
           for_summary = f.write(f"The iris data set contains {num_rows} rows and {num_cols} columns of data to analyse\n\n")
 
 #call the summary_stats function
-summary_stats()
+summary_stats()'''
 
 #Uncomment this on Wednesday
-
-unique_class = iris_csv.Class.unique()
+'''unique_class = iris_csv.Class.unique()
 
 def summary_data(Class):
       #need to loop through each attribute here
@@ -72,7 +71,7 @@ for Class in unique_class:
             headers1[x],Total, Mean, Max, Min = summary_data(Class)
             string1 = f.write(f"Iris Type : {Class}\n")
             string1 = f.write(f"Attribute : {headers1[x]}, Min : {Min}, Max : {Max}, Sum : {Total}, Mean : {Mean}\n")
-
+'''
 
 
 
