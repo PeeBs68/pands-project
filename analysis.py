@@ -35,43 +35,46 @@ with open(FILENAME, 'a') as f:
      for_header = f.write("Histogram saved as Sepal_Length_Histogram.png\n\n")
 plt.show()
 
-#Uncomment this on Monday
+#To show summary stats using describe() for each Class
+#with open(FILENAME, 'a') as f:
+#     for_header = f.write(str(iris_csv.groupby("Class").describe()))
+
 #create a function to gather summary stats on the data set and write to the output file
-'''def summary_stats():
+def summary_stats():
      num_rows = len(iris_csv)
      num_cols = len(iris_csv.columns)
-     print (num_rows, num_cols)
+#     print (num_rows, num_cols)
      with open(FILENAME, 'a') as f:
           for_summary = f.write(f"The iris data set contains {num_rows} rows and {num_cols} columns of data to analyse\n\n")
 
 #call the summary_stats function
-summary_stats()'''
+summary_stats()
 
-#Uncomment this on Wednesday
-'''unique_class = iris_csv.Class.unique()
 
+unique_class = iris_csv.Class.unique()
+
+#Gather individual statistics on each flower type (Class)
 def summary_data(Class):
       #need to loop through each attribute here
       #use headers1 list
       x = 0
       while x < 4:
-        print (headers1[x])
-        Total = iris_csv[headers1[x]].sum()
-        Mean = iris_csv[headers1[x]].mean()
-        Max = iris_csv[headers1[x]].max()
+#        print (headers1[x])
+#        Total = iris_csv[headers1[x]].sum()
         Min = iris_csv[headers1[x]].min()
+        Max = iris_csv[headers1[x]].max()
+        Mean = iris_csv[headers1[x]].mean()
         x = x+1
-        print(f"Min: {Min}")
-        return (headers1[x],Total, Mean, Max, Min)
+#        print(f"Min: {Min}")
+        return (headers1[x], Min, Max, Mean)
 
 for Class in unique_class:
-        print (Class)
+#        print (Class)
         x = 0
         with open(FILENAME, 'a') as f: #'a' for append
-            headers1[x],Total, Mean, Max, Min = summary_data(Class)
+            headers1[x], Min, Max, Mean = summary_data(Class)
             string1 = f.write(f"Iris Type : {Class}\n")
-            string1 = f.write(f"Attribute : {headers1[x]}, Min : {Min}, Max : {Max}, Sum : {Total}, Mean : {Mean}\n")
-'''
+            string1 = f.write(f"Attribute : {headers1[x]}, Min : {Min}, Max : {Max}, Mean : {Mean}\n")
 
 
 
