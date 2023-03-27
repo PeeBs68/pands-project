@@ -20,14 +20,28 @@ VS Code: 1.74.3
 
 
 # 1. Introduction
-The purpose of this project is to research the iris data set and write code (and) documentation in Python to analyse it.
+The purpose of this project is to research the iris data set and write code (and documentation) in Python to analyse it. 
+The iris data set is available to download from http://archive.ics.uci.edu/ml/datasets/Iris 
 
 # 2. Background
-The iris data sheet...
+The iris data set consists of data published by R. A. Fisher in 1936. It is made up of 150 samples (50 each) of three different types of iris flower - Iris Setosa, Iris Virginica and Iris Versicolor. Each flower was measured for Sepal Length, Sepal Width, Petal Length and Petal Width. 
+Although initially used by Fisher to apply his linear discriminant analysis, the data set is widely used today as a beginners learning tool in the areas of machine learning and data analysis.
+https://en.wikipedia.org/wiki/Iris_flower_data_set
+
 
 # 3. Methods
-Using descripting statistics...
-Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
+An online search will reveal that the iris data set is very popular and has been researhed and investigated by many in the past. The most popular analysis techniques involve using histograms to plot the individual attributes and using scatter plots to compare pairs of attributes. Basic descriptive statistics are also useful to present a summary of each attribute.
+Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
+
+To perform our analysis we firstly need to import a number of python modules. We import the pandas module for data manimpulation and analysis, the numpy module for arrays and matrices and finally the matplotlib module for plotting data.   
+
+The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas read_csv() function.
+
+For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function describe() we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the index vaules of the data set by specifying them using .loc[].
+https://www.statology.org/pandas-describe-only-mean-std/
+https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-describe
+
+
 
 # 4. Results
 The results are broken down and displayed...
