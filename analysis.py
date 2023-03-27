@@ -8,10 +8,13 @@ import numpy as np
 import matplotlib.pyplot as plt
  
 #Read the CSV file and add headers
-iris_csv = pd.read_csv('iris.data', sep= ",", header=None)
-headers =  ["Sepal L", "Sepal W", "Petal L", "Petal W", "Class"]
-headers1 = headers[0:4]
-iris_csv.columns = headers
+# reading the CSV file and add column names
+#From here - https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas
+col_names =  ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Class"]
+iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
+
+#used later
+headers1 = col_names[0:4]
 
 #Create the file to store the results
 FILENAME = "analysis.txt"
@@ -23,7 +26,7 @@ with open(FILENAME, 'a') as f:
 #Histogram Code - (need to add this to a function/loop later to loop through each variable)
 #Create a list just for Sepal Length 
 sepal_l = []
-for x in iris_csv['Sepal L']:
+for x in iris_csv['Sepal Length']:
     sepal_l.append(x)
 sepal_l.sort()
 plt.title("Sepal Length")
