@@ -19,9 +19,16 @@ headers1 = col_names[0:4]
 #Create the file to store the results
 FILENAME = "analysis.txt"
 
-#Write an into to the results file
+#Write an intro to the results file
 with open(FILENAME, 'a') as f:
-     for_header = f.write("This fle shows the output of the analysis performed on the iris data set\n\n")
+     for_header = f.write("This file shows the output of the analysis performed on the iris data set\n\n")
+
+#Using describe() to show summary stats and specifying what to display
+#https://www.statology.org/pandas-describe-only-mean-std/
+summary_stats = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
+with open(FILENAME, 'a') as f: #'a' for append
+            summary_stats = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
+            string1 = f.write(f"Summary of dataset : \n{summary_stats}\n")
 
 #Histogram Code - (need to add this to a function/loop later to loop through each variable)
 #Create a list just for Sepal Length 
@@ -35,49 +42,12 @@ plt.ylabel("Frequency")
 plt.hist(sepal_l)
 plt.savefig("Sepal_Length_Histogram.png")
 with open(FILENAME, 'a') as f:
-     for_header = f.write("Histogram saved as Sepal_Length_Histogram.png\n\n")
+     for_header = f.write("\nHistogram saved as Sepal_Length_Histogram.png\n\n")
 plt.show()
 
-#To show summary stats using describe() for each Class - maybe call this for each iris type
-#with open(FILENAME, 'a') as f:
-#     for_header = f.write(str(iris_csv.groupby("Class").describe()))
-
-#create a function to gather summary stats on the data set and write to the output file
-def summary_stats():
-     num_rows = len(iris_csv)
-     num_cols = len(iris_csv.columns)
-#     print (num_rows, num_cols)
-     with open(FILENAME, 'a') as f:
-          for_summary = f.write(f"The iris data set contains {num_rows} rows and {num_cols} columns of data to analyse\n\n")
-
-#call the summary_stats function
-summary_stats()
-
+#Maybe not needed anymore
 unique_class = iris_csv.Class.unique()
 
-#Gather individual statistics on each flower type (Class)
-def summary_data(Class):
-      #need to loop through each attribute here
-      #use headers1 list
-      x = 0
-      while x < 4:
-#        print (headers1[x])
-#        Total = iris_csv[headers1[x]].sum()
-        Min = iris_csv[headers1[x]].min()
-        Max = iris_csv[headers1[x]].max()
-        Mean = iris_csv[headers1[x]].mean()
-        x = x+1
-#        print(f"Min: {Min}")
-        print (Class, headers1[x])
-        return (headers1[x], Min, Max, Mean)
-
-for Class in unique_class:
-#        print (Class)
-        x = 0
-        with open(FILENAME, 'a') as f: #'a' for append
-            headers1[x], Min, Max, Mean = summary_data(Class)
-            string1 = f.write(f"Iris Type : {Class}\n")
-            string1 = f.write(f"Attribute : {headers1[x]}, Min : {Min}, Max : {Max}, Mean : {Mean}\n")
 
 
 
