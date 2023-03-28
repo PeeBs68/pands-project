@@ -33,6 +33,9 @@ https://en.wikipedia.org/wiki/Iris_flower_data_set
 An online search will reveal that the iris data set is very popular and has been researhed and investigated by many in the past. The most popular analysis techniques involve using histograms to plot the individual attributes and using scatter plots to compare pairs of attributes. Basic descriptive statistics are also useful to present a summary of each attribute.
 Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
+My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
+Once all the code was wroking I then set about cleaning it up and removing duplicates where possible through the use of functions etc.
+
 To perform our analysis we firstly need to import a number of python modules. We import the pandas module for data manimpulation and analysis, the numpy module for arrays and matrices and finally the matplotlib module for plotting data.   
 
 The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas read_csv() function.
