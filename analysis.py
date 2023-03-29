@@ -45,6 +45,7 @@ with open(FILENAME, 'a') as f:
      for_header = f.write("\nHistogram saved as Sepal_Length_Histogram.png")
 
 #Create a list just for Sepal Width 
+plt.clf()
 sepal_w = []
 for x in iris_csv['Sepal Width']:
     sepal_w.append(x)
@@ -59,6 +60,7 @@ with open(FILENAME, 'a') as f:
 #plt.show()
 
 #Create a list just for Petal Length
+plt.clf()
 petal_l = []
 for x in iris_csv['Petal Length']:
     petal_l.append(x)
@@ -72,6 +74,7 @@ with open(FILENAME, 'a') as f:
      for_header = f.write("\nHistogram saved as Petal_Length_Histogram.png")
 
 #Create a list just for Petal Width 
+plt.clf()
 petal_w = []
 for x in iris_csv['Petal Width']:
     petal_w.append(x)
@@ -90,6 +93,7 @@ with open(FILENAME, 'a') as f:
 #https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o
 
 print (petal_l)
+plt.clf()
 plt.scatter(petal_l, sepal_l, label='ages v salaries')
 
 #plt.title("Salaries v Ages")
