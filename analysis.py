@@ -85,6 +85,20 @@ with open(FILENAME, 'a') as f:
      for_header = f.write("\nHistogram saved as Petal_Width_Histogram.png\n\n")
 #plt.show()
 
+#For the scatter plots
+# This should help  to plot multiple plots (instead of overwriting)
+#https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o
+
+print (petal_l)
+plt.scatter(petal_l, sepal_l, label='ages v salaries')
+
+#plt.title("Salaries v Ages")
+#plt.xlabel("Ages")
+#plt.ylabel("Salaries")
+#plt.legend()
+
+plt.show()
+
 #Maybe not needed anymore
 unique_class = iris_csv.Class.unique()
 
