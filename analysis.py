@@ -42,8 +42,48 @@ plt.ylabel("Frequency")
 plt.hist(sepal_l)
 plt.savefig("Sepal_Length_Histogram.png")
 with open(FILENAME, 'a') as f:
-     for_header = f.write("\nHistogram saved as Sepal_Length_Histogram.png\n\n")
-plt.show()
+     for_header = f.write("\nHistogram saved as Sepal_Length_Histogram.png")
+
+#Create a list just for Sepal Width 
+sepal_w = []
+for x in iris_csv['Sepal Width']:
+    sepal_w.append(x)
+sepal_w.sort()
+plt.title("Sepal Width")
+plt.xlabel("Width")
+plt.ylabel("Frequency")
+plt.hist(sepal_w)
+plt.savefig("Sepal_Width_Histogram.png")
+with open(FILENAME, 'a') as f:
+     for_header = f.write("\nHistogram saved as Sepal_Width_Histogram.png")
+#plt.show()
+
+#Create a list just for Petal Length
+petal_l = []
+for x in iris_csv['Petal Length']:
+    petal_l.append(x)
+petal_l.sort()
+plt.title("Petal Length")
+plt.xlabel("Length")
+plt.ylabel("Frequency")
+plt.hist(petal_l)
+plt.savefig("Petal_Length_Histogram.png")
+with open(FILENAME, 'a') as f:
+     for_header = f.write("\nHistogram saved as Petal_Length_Histogram.png")
+
+#Create a list just for Petal Width 
+petal_w = []
+for x in iris_csv['Petal Width']:
+    petal_w.append(x)
+petal_w.sort()
+plt.title("Petal Width")
+plt.xlabel("Width")
+plt.ylabel("Frequency")
+plt.hist(petal_w)
+plt.savefig("Petal_Width_Histogram.png")
+with open(FILENAME, 'a') as f:
+     for_header = f.write("\nHistogram saved as Petal_Width_Histogram.png\n\n")
+#plt.show()
 
 #Maybe not needed anymore
 unique_class = iris_csv.Class.unique()
