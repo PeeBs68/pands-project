@@ -93,6 +93,8 @@ with open(FILENAME, 'a') as f:
 #https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o
 
 print (petal_l)
+@ https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop
+
 plt.clf()
 plt.scatter(petal_l, sepal_l, label='ages v salaries')
 
