@@ -85,25 +85,26 @@ plt.ylabel("Frequency")
 plt.hist(petal_w)
 plt.savefig("Petal_Width_Histogram.png")
 with open(FILENAME, 'a') as f:
-     for_header = f.write("\nHistogram saved as Petal_Width_Histogram.png\n\n")
+     for_header = f.write("\nHistogram saved as Petal_Width_Histogram.png\n")
 #plt.show()
 
 #For the scatter plots
 # This should help  to plot multiple plots (instead of overwriting)
 #https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o
 
-print (petal_l)
-@ https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop
+#print (petal_l)
+#@ https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop
 
 plt.clf()
-plt.scatter(petal_l, sepal_l, label='ages v salaries')
-
-#plt.title("Salaries v Ages")
-#plt.xlabel("Ages")
-#plt.ylabel("Salaries")
-#plt.legend()
-
-plt.show()
+plt.scatter(iris_csv['Sepal Length'], iris_csv['Sepal Width'], label='Sepal Length | Sepal Width\n')
+plt.title('Sepal Length | Sepal Width')
+plt.xlabel('Sepal length [cm]')
+plt.ylabel('Sepal Width [cm]')
+plt.legend()
+#plt.show()
+plt.savefig("Sepal Length | Sepal Width Scatterplot.png")
+with open(FILENAME, 'a') as f:
+     for_header = f.write("Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png\n\n")
 
 #Maybe not needed anymore
 unique_class = iris_csv.Class.unique()
