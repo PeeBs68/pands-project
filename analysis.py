@@ -104,13 +104,25 @@ plt.legend()
 #plt.show()
 plt.savefig("Sepal Length | Sepal Width Scatterplot.png")
 with open(FILENAME, 'a') as f:
-     for_header = f.write("Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png\n\n")
+     for_header = f.write("Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png\n")
+
+plt.clf()
+plt.scatter(iris_csv['Petal Length'], iris_csv['Petal Width'], label='Petal Length | Petal Width\n')
+plt.title('Petal Length | Petal Width')
+plt.xlabel('Petal length [cm]')
+plt.ylabel('Petal Width [cm]')
+plt.legend()
+#plt.show()
+plt.savefig("Petal Length | Petal Width Scatterplot.png")
+with open(FILENAME, 'a') as f:
+     for_header = f.write("Scatter Plot saved as Petal Length | Petal Width Scatterplot.png\n\n")
 
 #Maybe not needed anymore
-unique_class = iris_csv.Class.unique()
+#unique_class = iris_csv.Class.unique()
 
-
-
+'''Things to do
+Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
+'''
 
 #Everything below here is just for testing
 '''
