@@ -14,3 +14,179 @@ Histogram saved as Petal_Width_Histogram.png
 Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
 Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
 
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+
+This file shows the output of the analysis performed on the iris data set
+
+Summary of dataset : 
+      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.300000     2.000000      1.000000     0.100000
+max       7.900000     4.400000      6.900000     2.500000
+mean      5.843333     3.054000      3.758667     1.198667
+std       0.828066     0.433594      1.764420     0.763161
+
+Histogram saved as Sepal_Length_Histogram.png
+Histogram saved as Sepal_Width_Histogram.png
+Histogram saved as Petal_Length_Histogram.png
+Histogram saved as Petal_Width_Histogram.png
+Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png
+Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
+

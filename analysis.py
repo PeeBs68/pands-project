@@ -117,8 +117,20 @@ plt.savefig("Petal Length | Petal Width Scatterplot.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("Scatter Plot saved as Petal Length | Petal Width Scatterplot.png\n\n")
 
+#For some additional stats
+unique_class = iris_csv.Class.unique()
+print (iris_csv.Class.unique())
+for x in iris_csv.Class.unique():
+#    print(iris_csv['Class'].min)
+    Min = unique_class.min()
+    print (Min)
+
+#Prnting Mean, Max, Min, Sun
+#Total = iris_csv['Sepal L'].sum()
+#Mean = iris_csv['Sepal L'].mean()
+
 #Maybe not needed anymore
-#unique_class = iris_csv.Class.unique()
+unique_class = iris_csv.Class.unique()
 
 '''Things to do
 Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
