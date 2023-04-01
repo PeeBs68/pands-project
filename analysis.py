@@ -6,10 +6,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
- 
-#Read the CSV file and add headers
+
 # reading the CSV file and add column names
-#From here - https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas
 col_names =  ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Class"]
 iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
 
@@ -24,13 +22,12 @@ with open(FILENAME, 'a') as f:
      for_header = f.write("This file shows the output of the analysis performed on the iris data set\n\n")
 
 #Using describe() to show summary stats and specifying what to display
-#https://www.statology.org/pandas-describe-only-mean-std/
 summary_stats = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
 with open(FILENAME, 'a') as f: #'a' for append
             summary_stats = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
             string1 = f.write(f"Summary of dataset : \n{summary_stats}\n")
 
-#Histogram Code - (need to add this to a function/loop later to loop through each variable)
+#Histogram Code - (need to add this to a function/loop later to loop through each variable rather than having 4 sets of very like code)
 #Create a list just for Sepal Length 
 sepal_l = []
 for x in iris_csv['Sepal Length']:
@@ -57,7 +54,6 @@ plt.hist(sepal_w)
 plt.savefig("Sepal_Width_Histogram.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("\nHistogram saved as Sepal_Width_Histogram.png")
-#plt.show()
 
 #Create a list just for Petal Length
 plt.clf()
@@ -86,26 +82,19 @@ plt.hist(petal_w)
 plt.savefig("Petal_Width_Histogram.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("\nHistogram saved as Petal_Width_Histogram.png\n")
-#plt.show()
 
-#For the scatter plots
-# This should help  to plot multiple plots (instead of overwriting)
-#https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o
-
-#print (petal_l)
-#@ https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop
-
+#For the scatter plot for Sepal Width and Sepal Length
 plt.clf()
 plt.scatter(iris_csv['Sepal Length'], iris_csv['Sepal Width'], label='Sepal Length | Sepal Width\n')
 plt.title('Sepal Length | Sepal Width')
 plt.xlabel('Sepal length [cm]')
 plt.ylabel('Sepal Width [cm]')
 plt.legend()
-#plt.show()
 plt.savefig("Sepal Length | Sepal Width Scatterplot.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("Scatter Plot saved as Sepal Length | Sepal Width Scatterplot.png\n")
 
+#For the scatter plot for Petal Width and Petal Length
 plt.clf()
 plt.scatter(iris_csv['Petal Length'], iris_csv['Petal Width'], label='Petal Length | Petal Width\n')
 plt.title('Petal Length | Petal Width')
@@ -117,7 +106,7 @@ plt.savefig("Petal Length | Petal Width Scatterplot.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("Scatter Plot saved as Petal Length | Petal Width Scatterplot.png\n\n")
 
-#For some additional stats
+#For some additional stats - WIP
 unique_class = iris_csv.Class.unique()
 print (iris_csv.Class.unique())
 for x in iris_csv.Class.unique():
@@ -125,19 +114,20 @@ for x in iris_csv.Class.unique():
     Min = unique_class.min()
     print (Min)
 
-#Prnting Mean, Max, Min, Sun
-#Total = iris_csv['Sepal L'].sum()
-#Mean = iris_csv['Sepal L'].mean()
-
-#Maybe not needed anymore
+#Maybe not needed anymore?
 unique_class = iris_csv.Class.unique()
 
 '''Things to do
 Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
 '''
 
-#Everything below here is just for testing
+#Everything below here is just for testing for now
 '''
+
+#Prnting Mean, Max, Min, Sun
+#Total = iris_csv['Sepal L'].sum()
+#Mean = iris_csv['Sepal L'].mean()
+
 #playing with different print options
 for x in iris_csv['Sepal L']:
     print(x)
