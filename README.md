@@ -50,12 +50,18 @@ https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-de
 The results are broken down and displayed...
 
 # 5. References
-Usefull Links
+Links actually used in the code
+http://archive.ics.uci.edu/ml/datasets/Iris - iris data set repository   
+https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas - for adding column names to the data sheet   
+https://www.statology.org/pandas-describe-only-mean-std/ - using the describe() function   
+https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o - help with scatterplots using the plt.clf() function   
+https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop - help with scatterplots   
+
+
+
+
+Usefull Links - TBD if to be included
 #https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
-[1] Python Software Foundation. Welcome to python.org. https://www.python.org/. 
-[3] UC Irvine Machine Learning Repository. Iris data set. https://archive.ics.uci.edu/ml/datasets/iris
-UCI Machine Learning 
-Repository: Iris Data Set http://archive.ics.uci.edu/ml/datasets/Iris
 Useful link here
 https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
 https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/ 
