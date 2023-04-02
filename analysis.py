@@ -118,7 +118,12 @@ for x in iris_csv.Class.unique():
 unique_class = iris_csv.Class.unique()
 
 '''Things to do
-Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
+1 Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
+
+2 Look into using a list/dict for the plot attributes (titles, labels etc and could use a 
+loop/function maybe rather than 4 blocks of identical code)
+
+3 Clean up the output to the txt file for the plots so it reads better
 '''
 
 #Everything below here is just for testing for now
