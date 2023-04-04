@@ -106,16 +106,28 @@ plt.savefig("Petal Length | Petal Width Scatterplot.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("Scatter Plot saved as Petal Length | Petal Width Scatterplot.png\n\n")
 
-#For some additional stats - WIP
-unique_class = iris_csv.Class.unique()
-print (iris_csv.Class.unique())
-for x in iris_csv.Class.unique():
-#    print(iris_csv['Class'].min)
-    Min = unique_class.min()
-    print (Min)
-
 #Maybe not needed anymore?
 unique_class = iris_csv.Class.unique()
+
+#To split out each flower type into seperate variables and print a sample plot
+iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
+iris_virginica=iris_csv.loc[iris_csv["Class"]=="Iris-virginica"]
+iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
+plt.clf()
+iris_setosa.sort_values("Petal Length")
+iris_virginica.sort_values("Petal Length")
+iris_versicolor.sort_values("Petal Length")
+plt.title("Petal Length Comparison")
+plt.xlabel("Length")
+plt.ylabel("Frequency")
+plt.hist(iris_setosa["Petal Length"],label='iris_setosa')
+plt.hist(iris_virginica["Petal Length"],label='iris_virginica')
+plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
+plt.legend()
+plt.savefig("Petal Length Comparison.png")
+with open(FILENAME, 'a') as f:
+     for_header = f.write("\nHistogram saved as Petal Length Comparison.png")
+
 
 '''Things to do
 1 Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
