@@ -130,7 +130,7 @@ with open(FILENAME, 'a') as f:
 
 
 '''Things to do
-1 Maybe add analysis for 'petal length' or whatever by flower type etc to the text file
+1 Add individual stats by flower type
 
 2 Look into using a list/dict for the plot attributes (titles, labels etc and could use a 
 loop/function maybe rather than 4 blocks of identical code)
