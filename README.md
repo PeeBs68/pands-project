@@ -47,7 +47,7 @@ https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-de
 
 
 # 4. Results
-The results are broken down and displayed...
+The results are broken down and displayed in Histograms etc...
 
 # 5. References
 Links actually used in the code
