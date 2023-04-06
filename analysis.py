@@ -128,6 +128,30 @@ plt.savefig("Petal Length Comparison.png")
 with open(FILENAME, 'a') as f:
      for_header = f.write("\nHistogram saved as Petal Length Comparison.png")
 
+def write_data():
+    xxx = iris_setosa.describe().loc[['min', 'max', 'mean', 'std']]
+    yyy = iris_versicolor.describe().loc[['min', 'max', 'mean', 'std']]
+    zzz = iris_virginica.describe().loc[['min', 'max', 'mean', 'std']]
+    print (unique_class[0])
+    print (xxx)
+    with open(FILENAME, 'a') as f:
+         string0 = f.write(f"\n\nSummary Data for {unique_class[0]}\n")
+         string1 = f.write(str(unique_class[0]))
+         string2 = f.write(str(xxx))
+    print (unique_class[1])
+    print (yyy)
+    with open(FILENAME, 'a') as f:
+         string0 = f.write(f"\n\nSummary Data for {unique_class[1]}\n")
+         string1 = f.write(str(unique_class[1]))
+         string2 = f.write(str(yyy))
+    print (unique_class[2])
+    print (zzz)
+    with open(FILENAME, 'a') as f:
+         string0 = f.write(f"\n\nSummary Data for {unique_class[2]}\n")
+         string1 = f.write(str(unique_class[2]))
+         string2 = f.write(str(zzz))
+
+write_data()
 
 '''Things to do
 1 Add individual stats by flower type

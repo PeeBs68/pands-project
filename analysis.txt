@@ -16,3 +16,24 @@ Scatter Plot saved as Petal Length | Petal Width Scatterplot.png
 
 
 Histogram saved as Petal Length Comparison.png
+
+Summary Data for Iris-setosa
+Iris-setosa      Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.30000     2.300000      1.000000      0.10000
+max        5.80000     4.400000      1.900000      0.60000
+mean       5.00600     3.418000      1.464000      0.24400
+std        0.35249     0.381024      0.173511      0.10721
+
+Summary Data for Iris-versicolor
+Iris-versicolor      Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.900000     2.000000      3.000000     1.000000
+max       7.000000     3.400000      5.100000     1.800000
+mean      5.936000     2.770000      4.260000     1.326000
+std       0.516171     0.313798      0.469911     0.197753
+
+Summary Data for Iris-virginica
+Iris-virginica      Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.90000     2.200000      4.500000      1.40000
+max        7.90000     3.800000      6.900000      2.50000
+mean       6.58800     2.974000      5.552000      2.02600
+std        0.63588     0.322497      0.551895      0.27465
