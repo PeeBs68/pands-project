@@ -17,15 +17,21 @@ headers1 = col_names[0:4]
 #Create the file to store the results
 FILENAME = "analysis.txt"
 
+#Function for writing data to the text file
+def text_write(data):
+     with open(FILENAME, 'a') as f:
+         data_to_write = f.write(data)
+
 #Write an intro to the results file
-with open(FILENAME, 'a') as f:
-     for_header = f.write("This file shows the output of the analysis performed on the iris data set\n\n")
+data = "This file shows the output of the analysis performed on the iris data set\n\n"
+#Call the text_write function to write the data to the text file
+text_write(data)
 
 #Using describe() to show summary stats and specifying the attributes to display
-summary_stats = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
-with open(FILENAME, 'a') as f: #'a' for append
-            summary_stats = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
-            string1 = f.write(f"Summary of dataset : \n{summary_stats}\n")
+data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
+data = data.to_string(header=headers1, index=True)
+#Call the text_write function to write the data to the text file
+text_write(f"Summary of Dataset: \n {data}")
 
 #Create individual variables containing data for each flower types
 iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
@@ -41,7 +47,7 @@ def individual_stats():
     versicolor_stats = iris_versicolor.describe().loc[['min', 'max', 'mean', 'std']]
     virginica_stats = iris_virginica.describe().loc[['min', 'max', 'mean', 'std']]
     with open(FILENAME, 'a') as f:
-         string1 = f.write(f"\nSummary Data for {unique_class[0]}\n")
+         string1 = f.write(f"\n\nSummary Data for {unique_class[0]}\n")
          summary1 = f.write(str(setosa_stats))
          string1 = f.write(f"\n\nSummary Data for {unique_class[1]}\n")
          summary2 = f.write(str(versicolor_stats))
