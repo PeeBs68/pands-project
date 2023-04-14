@@ -44,6 +44,10 @@ For our analysis we will start with presenting basic descriptive statistics such
 https://www.statology.org/pandas-describe-only-mean-std/
 https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-describe
 
+We create a new function 'text_write' that is used whenever we want to write data to the text file. This function opens the file and writes the data. using a function like this saves a number of lines of code and simplifies the script.
+https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
+
 
 
 # 4. Results
@@ -58,7 +62,8 @@ https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a
 https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop - help with scatterplots   
 https://medium.com/@avulurivenkatasaireddyexploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d - plotting suggestions   
 https://stackoverflow.com/questions/37787698/how-to-sort-pandas-dataframe-from-one-column - sorting dataframes   
-
+https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file)   
 
 
 
