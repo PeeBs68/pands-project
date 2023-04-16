@@ -28,9 +28,8 @@ max        7.90000     3.800000      6.900000      2.50000
 mean       6.58800     2.974000      5.552000      2.02600
 std        0.63588     0.322497      0.551895      0.27465
 
-
-
 The following plots are created and stored in this same directory
+
 
 Sepal_Length_Histogram.png saved showing a plot of Sepal Lengths
 Sepal_Width_Histogram.png saved showing a plot of Sepal Widths

@@ -67,8 +67,9 @@ individual_stats()'''
 
 #Histogram Code - (need to add this to a function/loop later to loop through each variable rather than having 4 sets of very like code)
 #Add a few blank lies for presentation purposes
-with open(FILENAME, 'a') as f:
-     string0 = f.write("\n\nThe following plots are created and stored in this same directory\n")
+#Add a header to the text file
+data = "The following plots are created and stored in this same directory\n\n"
+text_write(data)
 
 #Create a list just for Sepal Length 
 sepal_l = []
@@ -80,8 +81,8 @@ plt.xlabel("Length")
 plt.ylabel("Frequency")
 plt.hist(sepal_l)
 plt.savefig("Sepal_Length_Histogram.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("\nSepal_Length_Histogram.png saved showing a plot of Sepal Lengths")
+data = "\nSepal_Length_Histogram.png saved showing a plot of Sepal Lengths"
+text_write(data)
 
 #Create a list just for Sepal Width 
 plt.clf()
@@ -94,8 +95,8 @@ plt.xlabel("Width")
 plt.ylabel("Frequency")
 plt.hist(sepal_w)
 plt.savefig("Sepal_Width_Histogram.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("\nSepal_Width_Histogram.png saved showing a plot of Sepal Widths")
+data = "\nSepal_Width_Histogram.png saved showing a plot of Sepal Widths"
+text_write(data)
 
 #Create a list just for Petal Length
 plt.clf()
@@ -108,8 +109,8 @@ plt.xlabel("Length")
 plt.ylabel("Frequency")
 plt.hist(petal_l)
 plt.savefig("Petal_Length_Histogram.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("\nPetal_Length_Histogram.png saved showing a plot of Petal Lengths")
+data = "\nPetal_Length_Histogram.png saved showing a plot of Petal Lengths"
+text_write(data)
 
 #Create a list just for Petal Width 
 plt.clf()
@@ -122,8 +123,8 @@ plt.xlabel("Width")
 plt.ylabel("Frequency")
 plt.hist(petal_w)
 plt.savefig("Petal_Width_Histogram.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("\nPetal_Width_Histogram.png saved showing a plot of Sepal Lengths")
+data = "\nPetal_Width_Histogram.png saved showing a plot of Sepal Lengths"
+text_write(data)
 
 #For the scatter plot for Sepal Width and Sepal Length
 plt.clf()
@@ -133,8 +134,8 @@ plt.xlabel('Sepal length [cm]')
 plt.ylabel('Sepal Width [cm]')
 plt.legend()
 plt.savefig("Sepal_Length | Sepal_Width Scatterplot.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("\nSepal_Length | Sepal_Width Scatterplot.png saved showing a plot of Sepal Lengths and Sepal Widths\n")
+data = "\nSepal_Length | Sepal_Width Scatterplot.png saved showing a plot of Sepal Lengths and Sepal Widths\n"
+text_write(data)
 
 #For the scatter plot for Petal Width and Petal Length
 plt.clf()
@@ -145,8 +146,8 @@ plt.ylabel('Petal Width [cm]')
 plt.legend()
 #plt.show()
 plt.savefig("Petal Length | Petal Width Scatterplot.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("Petal Length | Petal Width Scatterplot.png saved showing a plot of Petal Lengths and Petal Widths\n")
+data = "Petal Length | Petal Width Scatterplot.png saved showing a plot of Petal Lengths and Petal Widths\n"
+text_write(data)
 
 #To split out each flower type into seperate variables and print a sample plot
 plt.clf()
@@ -161,9 +162,8 @@ plt.hist(iris_virginica["Petal Length"],label='iris_virginica')
 plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
 plt.legend()
 plt.savefig("Petal_Length_Comparison.png")
-with open(FILENAME, 'a') as f:
-     for_header = f.write("Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths for all three flower types\n\n")
-
+data = "Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths for all three flower types\n\n"
+text_write(data)
 
 '''Things to do
 1 Look into using a list/dict for the plot attributes (titles, labels etc and could use a 
