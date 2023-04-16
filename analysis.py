@@ -31,7 +31,7 @@ text_write(data)
 data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
 data = data.to_string(header=headers1, index=True)
 #Call the text_write function to write the data to the text file
-text_write(f"Summary of Dataset: \n {data}")
+text_write(f"Summary of Dataset: \n {data}\n\n")
 
 #Create individual variables containing data for each flower types
 iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
@@ -41,7 +41,15 @@ iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
 #Create a variable to store the unique classes of iris
 unique_class = iris_csv.Class.unique()
 
-#Function to gather and print individual stats for each flower type to the output file
+#Code to gather and print individual stats for each flower type to the output file
+x=0
+while x < 3:
+     data = iris_csv.loc[iris_csv["Class"]==unique_class[x]]
+     data = data.describe().loc[['min', 'max', 'mean', 'std']]
+     text_write(f"Summary Data for {unique_class[x]}: \n {data}\n\n")
+     x=x+1
+
+'''Function to gather and print individual stats for each flower type to the output file
 def individual_stats():
     setosa_stats = iris_setosa.describe().loc[['min', 'max', 'mean', 'std']]
     versicolor_stats = iris_versicolor.describe().loc[['min', 'max', 'mean', 'std']]
@@ -55,7 +63,7 @@ def individual_stats():
          summary3 = f.write(str(virginica_stats))
 
 #Call the individual_stats function - (maybe can be cleaned up to reduce code later)
-individual_stats()
+individual_stats()'''
 
 #Histogram Code - (need to add this to a function/loop later to loop through each variable rather than having 4 sets of very like code)
 #Add a few blank lies for presentation purposes
