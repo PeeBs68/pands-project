@@ -167,6 +167,9 @@ data = "Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths
 text_write(data)
 
 #Heatmap using seaborn
+#https://practicaldatascience.co.uk/data-science/how-to-calculate-pearson-correlation-in-pandas
+#https://blog.quantinsti.com/creating-heatmap-using-python-seaborn/
+#https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 #drop the Class column or else you'll get a float error - see below URL
 #https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
 plt.clf()
