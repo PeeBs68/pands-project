@@ -6,6 +6,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # reading the CSV file and add column names
 col_names =  ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Class"]
@@ -162,8 +163,20 @@ plt.hist(iris_virginica["Petal Length"],label='iris_virginica')
 plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
 plt.legend()
 plt.savefig("Petal_Length_Comparison.png")
-data = "Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths for all three flower types\n\n"
+data = "Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths for all three flower types\n"
 text_write(data)
+
+#Heatmap using seaborn
+#drop the Class column or else you'll get a float error - see below URL
+#https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
+plt.clf()
+iris_csv_sns = iris_csv.drop("Class", axis=1)
+sns.heatmap(iris_csv_sns.corr(method='pearson'), cmap="YlGnBu", annot=True); 
+plt.title("Heatmap - Pearsons Correllation")
+plt.savefig("Heatmap.png")
+data = "Heatmap.png saved showing a plot of person's correllation\n\n"
+text_write(data)
+
 
 '''Things to do
 1 Look into using a list/dict for the plot attributes (titles, labels etc and could use a 
