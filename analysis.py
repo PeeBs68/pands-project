@@ -15,6 +15,9 @@ iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
 #used later
 headers1 = col_names[0:4]
 
+#create a list to hold ouput details for ptinting back to the console upon completion
+outputs = []
+
 #Create the file to store the results
 FILENAME = "analysis.txt"
 
@@ -28,11 +31,16 @@ data = "This file shows the output of the analysis performed on the iris data se
 #Call the text_write function to write the data to the text file
 text_write(data)
 
+output_data = (f"Created {FILENAME} to show summary data")
+outputs.append(output_data)
+
 #Using describe() to show summary stats and specifying the attributes to display
 data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
 data = data.to_string(header=headers1, index=True)
 #Call the text_write function to write the data to the text file
 text_write(f"Summary of Dataset: \n {data}\n\n")
+output_data = (f"Writing summary for the combined data set to {FILENAME}")
+outputs.append(output_data)
 
 #Create individual variables containing data for each flower types
 iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
@@ -47,6 +55,8 @@ x=0
 while x < 3:
      data = iris_csv.loc[iris_csv["Class"]==unique_class[x]]
      data = data.describe().loc[['min', 'max', 'mean', 'std']]
+     output_data = (f"Writing summary data for {unique_class[x]} to {FILENAME}")
+     outputs.append(output_data)
      text_write(f"Summary Data for {unique_class[x]}: \n {data}\n\n")
      x=x+1
 
@@ -71,6 +81,9 @@ individual_stats()'''
 #Add a header to the text file
 data = "The following plots are created and stored in this same directory\n\n"
 text_write(data)
+
+output_data = (f"Generating plots and saving to local directory and writing plot names to {FILENAME}")
+outputs.append(output_data)
 
 #Create a list just for Sepal Length 
 sepal_l = []
@@ -179,6 +192,13 @@ plt.title("Heatmap - Pearsons Correllation")
 plt.savefig("Heatmap.png")
 data = "Heatmap.png saved showing a plot of person's correllation\n\n"
 text_write(data)
+
+output_data = (f"Finished writing to {FILENAME}")
+outputs.append(output_data)
+
+#Print the output list which informs the user what the script has done
+for output in outputs:
+     print (output)
 
 
 '''Things to do
