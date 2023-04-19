@@ -48,7 +48,19 @@ We create a new function 'text_write' that is used whenever we want to write dat
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
 
-
+Terminal Command:
+```
+python3 analysis.py
+```
+Sample Output:
+```
+Created analysis.txt to show summary data
+Writing summary for the combined data set to analysis.txt
+Writing summary data for Iris-setosa to analysis.txt
+Writing summary data for Iris-versicolor to analysis.txt
+Writing summary data for Iris-virginica to analysis.txt
+Finished writing to analysis.txt
+```
 
 # 4. Results
 The results are broken down and displayed in Histograms etc...
