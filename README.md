@@ -12,9 +12,10 @@ VS Code: 1.74.3
 2. [Background](#2-Background)
 3. [Methods](#3-Methods)
 4. [Results](#4-Results)
-    1. res1
-    2. res2
-    3. res3
+    1. Descriptive Stats
+    2. Histograms
+    3. Scatterplots
+    4. Heatmap
     4. etc.
 5. [References](#5-References)
 
@@ -34,19 +35,27 @@ An online search will reveal that the iris data set is very popular and has been
 Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
 My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
-Once all the code was wroking I then set about cleaning it up and removing duplicates where possible through the use of functions etc.
+Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc.
 
-To perform our analysis we firstly need to import a number of python modules. We import the pandas module for data manimpulation and analysis, the numpy module for arrays and matrices and finally the matplotlib module for plotting data.   
+To perform our analysis we firstly need to import the following python modules:   
+    pandas - module used for data analysis and manipulation of tabular data   
+    numpy - module that offers support for working with arrays and matrices and complex mathematical functions   
+    matplotlib - module for plotting data and creating graphical representations of data   
+    seaborn - module for statistical plotting and data visualisation   
 
-The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas read_csv() function.
+The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas read_csv() function. During the reading of the file  we assign column name (which were not present in our original data set) for later use during our analysis.
 
 For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function describe() we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the index vaules of the data set by specifying them using .loc[].
 https://www.statology.org/pandas-describe-only-mean-std/
 https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-describe
 
+Using a while loop we also present similar stats by flower type ... although we know there are 3 flower types we still use the count to get it and to be used oin our loop...
+
 We create a new function 'text_write' that is used whenever we want to write data to the text file. This function opens the file and writes the data. using a function like this saves a number of lines of code and simplifies the script.
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
+
+In order to provide feedback to the user who runs the script, we create a list and populate it at various stages of execution with the details of what the script is doing. We then print this to the termin upon completion of the script.
 
 Terminal Command:
 ```
