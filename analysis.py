@@ -51,14 +51,14 @@ iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
 unique_class = iris_csv.Class.unique()
 
 #Code to gather and print individual stats for each flower type to the output file
-x=0
-while x < 3:
-     data = iris_csv.loc[iris_csv["Class"]==unique_class[x]]
+flower=0
+while flower < 3:
+     data = iris_csv.loc[iris_csv["Class"]==unique_class[flower]]
      data = data.describe().loc[['min', 'max', 'mean', 'std']]
-     output_data = (f"Writing summary data for {unique_class[x]} to {FILENAME}")
+     output_data = (f"Writing summary data for {unique_class[flower]} to {FILENAME}")
      outputs.append(output_data)
-     text_write(f"Summary Data for {unique_class[x]}: \n {data}\n\n")
-     x=x+1
+     text_write(f"Summary Data for {unique_class[flower]}: \n {data}\n\n")
+     flower=flower+1
 
 '''Function to gather and print individual stats for each flower type to the output file
 def individual_stats():
