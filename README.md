@@ -12,11 +12,10 @@ VS Code: 1.74.3
 2. [Background](#2-Background)
 3. [Methods](#3-Methods)
 4. [Results](#4-Results)
-    1. [Descriptive Stats](#41-descripting-statistics)
-    2. Histograms
-    3. Scatterplots
-    4. Heatmap
-    4. etc.
+    1. [Descriptive Stats](##descripting-statistics)
+    2. [Histograms](#42-histograms)
+    3. [Scatterplots](#43-scatterplots)
+    4. [Heatmaps](#44-heatmaps)
 5. [References](#5-References)
 
 
@@ -55,7 +54,7 @@ We create a new function 'text_write' that is used whenever we want to write dat
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
 
-In order to provide feedback to the user who runs the script, we create a list and populate it at various stages of execution with the details of what the script is doing. We then print this to the termin upon completion of the script.
+In order to provide feedback to the user who runs the script, we create a list and populate it at various stages of execution with the details of what the script is doing. We then print this to the terminal upon completion of the script.
 
 Terminal Command:
 ```
@@ -68,13 +67,33 @@ Writing summary for the combined data set to analysis.txt
 Writing summary data for Iris-setosa to analysis.txt
 Writing summary data for Iris-versicolor to analysis.txt
 Writing summary data for Iris-virginica to analysis.txt
+Generating plots and saving to local directory and writing plot names to analysis.txt
 Finished writing to analysis.txt
 ```
 
 # 4. Results
 The results of the analysis are split between basic descriptive statistics of the data set, which are exported out to the analysis.txt file, and various plots of the data...
-# 4.1 Descripting Statistics
-Descriptive Statistics are first exported to the analysis.txt file for the entire data set.
+## 4.1. Descripting Statistics
+Descriptive Statistics are first exported to the analysis.txt file for the entire data set. This gives an overall view of the min, max, mean and standard deviation for the four main data elements - Petal Length, Petal Width, Sepal Length and Sepal Width.   
+
+We then complement this be exporting the same statistics but split by the three flower types - Iris-setosa, Iris-versicolor and Iris-virginica. Reading this data we can easily pick out data such as seeing that the Iris-virginica has the longer Sepal Length of 7.9cm or that the Iris-setosa has the shortest Petal Length at 1cm compared to the Iris-versicolor (3cm) and Iris-virginica (4.5cm).   
+
+## 4.2. Histograms
+Using histograms we can plot the distribution of our data and see the frequency distributions. 
+
+We plot a total of four histograms - one for each category. A typical histogram would look like a bell curve with the majprity of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the other three categories showing non symmetrical dstribution.
+## 4.3. Scatterplots
+Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length.
+
+We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Length. This indicates a very strong relationship between the two.
+
+However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two.
+## 4.4. Heatmaps   
+Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares whosing a stronge relationship and the lighter yellow squares showing a weak relationship. 
+
+From the heatmap we can easily pick out which variables have a strong or a weak relationship. For example, we can see that there is a strong positive relationship between Petal Length and Petal Width (.96) meaning that as the Petal Length increases so does the Petal Width. 
+
+However we can also see that there is a very weak negative relationship between Sepal Width and Sepal Length (-.11) indicating that as one variable increases the other tends to decrease.
 
 # 5. References
 Links actually used in the code
