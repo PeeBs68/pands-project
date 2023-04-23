@@ -187,6 +187,15 @@ plt.savefig("Heatmap.png")
 data = "Heatmap.png saved showing a plot of person's correllation\n\n"
 text_write(data)
 
+#Using inbuilt corr() to generate Pearson's correlation table
+#https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+p_corr = iris_csv.corr(method='pearson')
+#Convert dataframe to string 
+data = p_corr.to_string()
+text_write(f"Pearson's Correlation of Dataset: \n {data}\n\n")
+output_data = (f"Writing Person's Correlation data to {FILENAME}")
+outputs.append(output_data)
+
 output_data = (f"Finished writing to {FILENAME}")
 outputs.append(output_data)
 

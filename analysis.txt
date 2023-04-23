@@ -40,3 +40,10 @@ Petal Length | Petal Width Scatterplot.png saved showing a plot of Petal Lengths
 Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths for all three flower types
 Heatmap.png saved showing a plot of person's correllation
 
+Pearson's Correlation of Dataset: 
+               Sepal Length  Sepal Width  Petal Length  Petal Width
+Sepal Length      1.000000    -0.109369      0.871754     0.817954
+Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
+Petal Length      0.871754    -0.420516      1.000000     0.962757
+Petal Width       0.817954    -0.356544      0.962757     1.000000
+
