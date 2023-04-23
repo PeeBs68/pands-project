@@ -12,7 +12,7 @@ VS Code: 1.74.3
 2. [Background](#2-Background)
 3. [Methods](#3-Methods)
 4. [Results](#4-Results)
-    1. Descriptive Stats
+    1. [Descriptive Stats](#41-descripting-statistics)
     2. Histograms
     3. Scatterplots
     4. Heatmap
@@ -72,7 +72,9 @@ Finished writing to analysis.txt
 ```
 
 # 4. Results
-The results are broken down and displayed in Histograms etc...
+The results of the analysis are split between basic descriptive statistics of the data set, which are exported out to the analysis.txt file, and various plots of the data...
+# 4.1 Descripting Statistics
+Descriptive Statistics are first exported to the analysis.txt file for the entire data set.
 
 # 5. References
 Links actually used in the code
