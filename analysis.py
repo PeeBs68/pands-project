@@ -31,8 +31,21 @@ data = "This file shows the output of the analysis performed on the iris data se
 #Call the text_write function to write the data to the text file
 text_write(data)
 
-output_data = (f"Created {FILENAME} to show summary data")
+output_data = (f"Created {FILENAME} to show summary data for the iris data set")
 outputs.append(output_data)
+
+
+#Generate some basic information on the data set and write them to the text file
+data = iris_csv.shape
+text_write(f"The number of Rows, Columns in the data set are: {data}\n\n")
+#Method taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+import io
+buf = io.StringIO()
+iris_csv.info(buf=buf)
+data = buf.getvalue()
+#data = iris_csv.info(buf=None)
+text_write(f"The column names and data types in the data set are: \n\n {data}\n\n")
+
 
 #Using describe() to show summary stats and specifying the attributes to display
 data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]

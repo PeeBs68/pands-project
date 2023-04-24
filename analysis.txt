@@ -1,5 +1,23 @@
 This file shows the output of the analysis performed on the iris data set
 
+The number of Columns, Rows in the data set are: (150, 5)
+
+The column names and data types in the data set are: 
+
+ <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Sepal Length  150 non-null    float64
+ 1   Sepal Width   150 non-null    float64
+ 2   Petal Length  150 non-null    float64
+ 3   Petal Width   150 non-null    float64
+ 4   Class         150 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.0+ KB
+
+
 Summary of Dataset: 
       Sepal Length Sepal Width Petal Length Petal Width
 min      4.300000    2.000000     1.000000    0.100000
