@@ -12,10 +12,11 @@ VS Code: 1.74.3
 2. [Background](#2-Background)
 3. [Methods](#3-Methods)
 4. [Results](#4-Results)
-    1. [Descriptive Stats](##descripting-statistics)
+    1. [Descriptive Stats](#41-descriptive-statistics)
     2. [Histograms](#42-histograms)
     3. [Scatterplots](#43-scatterplots)
     4. [Heatmaps](#44-heatmaps)
+    5. [Correlations](#45-correlations)
 5. [References](#5-References)
 
 
@@ -73,7 +74,7 @@ Finished writing to analysis.txt
 
 # 4. Results
 The results of the analysis are split between basic descriptive statistics of the data set, which are exported out to the analysis.txt file, and various plots of the data...
-## 4.1. Descripting Statistics
+## 4.1. Descriptive Statistics
 Descriptive Statistics are first exported to the analysis.txt file for the entire data set. This gives an overall view of the min, max, mean and standard deviation for the four main data elements - Petal Length, Petal Width, Sepal Length and Sepal Width.   
 
 We then complement this be exporting the same statistics but split by the three flower types - Iris-setosa, Iris-versicolor and Iris-virginica. Reading this data we can easily pick out data such as seeing that the Iris-virginica has the longer Sepal Length of 7.9cm or that the Iris-setosa has the shortest Petal Length at 1cm compared to the Iris-versicolor (3cm) and Iris-virginica (4.5cm).   
@@ -84,19 +85,24 @@ Using histograms we can plot the distribution of our data and see the frequency 
 We plot a total of four histograms - one for each category. A typical histogram would look like a bell curve with the majprity of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the other three categories showing non symmetrical dstribution.
 Lastly we generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other.
 
+Lastly, to show the power of python, we create a histogram comparing the Petal Length for all three flower types on a single plot. From this we can conclude that the Petal Length for the Iris-Setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
 
 ## 4.3. Scatterplots
-Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length.
+Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length. 
 
 We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Length. This indicates a very strong relationship between the two.
 
 However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two.
+
 ## 4.4. Heatmaps   
 Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares whosing a stronge relationship and the lighter yellow squares showing a weak relationship. 
 
 From the heatmap we can easily pick out which variables have a strong or a weak relationship. For example, we can see that there is a strong positive relationship between Petal Length and Petal Width (.96) meaning that as the Petal Length increases so does the Petal Width. 
 
 However we can also see that there is a very weak negative relationship between Sepal Width and Sepal Length (-.11) indicating that as one variable increases the other tends to decrease.
+
+## 4.5. Correlations 
+As well as using the Heatmap described above to graphically represent correlations in the data we can also use the inbuilt corr() function to generate a table showing the same data. From this table (which is exported to the analysis.txt file) we can see the same correlations as in the Heatmap, such as seeing that the relationship between Petal Length and Petal Width is very strong at .96
 
 # 5. References
 Links actually used in the code
