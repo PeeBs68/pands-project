@@ -45,6 +45,10 @@ To perform our analysis we firstly need to import the following python modules:
 
 The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas read_csv() function. During the reading of the file  we assign column name (which were not present in our original data set) for later use during our analysis.
 
+Using the inbuilt functions shape and info() we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to th tect file.
+Method to suppress the printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+
+
 For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function describe() we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the index vaules of the data set by specifying them using .loc[].
 https://www.statology.org/pandas-describe-only-mean-std/
 https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-describe
