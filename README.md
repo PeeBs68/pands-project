@@ -31,7 +31,7 @@ https://en.wikipedia.org/wiki/Iris_flower_data_set
 
 
 # 3. Methods
-An online search will reveal that the iris data set is very popular and has been researhed and investigated by many in the past. The most popular analysis techniques involve using histograms to plot the individual attributes and using scatter plots to compare pairs of attributes. Basic descriptive statistics are also useful to present a summary of each attribute.
+An online search will reveal that the iris data set is very popular and has been researched and investigated by many in the past. The most popular analysis techniques involve using histograms to plot the individual attributes and using scatter plots to compare pairs of attributes. Basic descriptive statistics are also useful to present a summary of each attribute.
 Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
 My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
@@ -43,10 +43,9 @@ To perform our analysis we firstly need to import the following python modules:
     matplotlib - module for plotting data and creating graphical representations of data   
     seaborn - module for statistical plotting and data visualisation   
 
-The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas read_csv() function. During the reading of the file  we assign column name (which were not present in our original data set) for later use during our analysis.
+The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas ```read_csv()``` function. During the reading of the file  we assign column names (which were not present in our original data set) for later use during our analysis.
 
-Using the inbuilt functions shape and info() we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to th tect file.
-Method to suppress the printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+Using the inbuilt functions shape and info() we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to the text file. Typically the info() function prints back to the terminal but we supress this and write it only to the text file using code sourced from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
 
 
 For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function describe() we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the index vaules of the data set by specifying them using .loc[].
@@ -55,7 +54,7 @@ https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-de
 
 Using a while loop we also present similar stats by flower type ... although we know there are 3 flower types we still use the count to get it and to be used oin our loop...
 
-We create a new function 'text_write' that is used whenever we want to write data to the text file. This function opens the file and writes the data. using a function like this saves a number of lines of code and simplifies the script.
+We create a new function 'text_write' that is used whenever we want to write data to the text file. This function opens the file and writes the data. Using a function like this saves a number of lines of code and simplifies the script.
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
 
@@ -87,9 +86,8 @@ We then complement this be exporting the same statistics but split by the three 
 Using histograms we can plot the distribution of our data and see the frequency distributions. 
 
 We plot a total of four histograms - one for each category. A typical histogram would look like a bell curve with the majprity of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the other three categories showing non symmetrical dstribution.
-Lastly we generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other.
 
-Lastly, to show the power of python, we create a histogram comparing the Petal Length for all three flower types on a single plot. From this we can conclude that the Petal Length for the Iris-Setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
+Lastly we generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other. From this we can conclude that the Petal Length for the Iris-Setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
 
 ## 4.3. Scatterplots
 Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length. 
