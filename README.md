@@ -43,7 +43,7 @@ To perform our analysis we firstly need to import the following python modules:
     matplotlib - module for plotting data and creating graphical representations of data   
     seaborn - module for statistical plotting and data visualisation   
 
-The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas ```read_csv()``` function. During the reading of the file  we assign column names (which were not present in our original data set) for later use during our analysis.
+The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas```read_csv()```function. During the reading of the file  we assign column names (which were not present in our original data set) for later use during our analysis.
 
 Using the inbuilt functions shape and info() we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to the text file. Typically the info() function prints back to the terminal but we supress this and write it only to the text file using code sourced from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
 
