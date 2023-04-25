@@ -15,7 +15,7 @@ iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
 #used later
 headers1 = col_names[0:4]
 
-#create a list to hold ouput details for ptinting back to the console upon completion
+#create a list to hold ouput details for printing back to the console upon completion
 outputs = []
 
 #Create the file to store the results
@@ -31,31 +31,37 @@ data = "This file shows the output of the analysis performed on the iris data se
 #Call the text_write function to write the data to the text file
 text_write(data)
 
+#Append the current completed action to the outputs list for printing upon script completion
 output_data = (f"Created {FILENAME} to show summary data for the iris data set")
 outputs.append(output_data)
 
 
 #Generate some basic information on the data set and write them to the text file
+#Rows and Columns
 data = iris_csv.shape
 text_write(f"The number of Rows, Columns in the data set are: {data}\n\n")
-#Method taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+
+#Column Names and Data Types
+#Method to supress terminal printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
 import io
 buf = io.StringIO()
 iris_csv.info(buf=buf)
 data = buf.getvalue()
-#data = iris_csv.info(buf=None)
 text_write(f"The column names and data types in the data set are: \n\n {data}\n\n")
 
 
 #Using describe() to show summary stats and specifying the attributes to display
 data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
+#Convert the data to a str
 data = data.to_string(header=headers1, index=True)
 #Call the text_write function to write the data to the text file
 text_write(f"Summary of Dataset: \n {data}\n\n")
+#Append the current completed action to the outputs list for printing upon script completion
 output_data = (f"Writing summary for the combined data set to {FILENAME}")
 outputs.append(output_data)
 
-#Create individual variables containing data for each flower types
+#Create individual variables containing data for each flower types to be used later 
+#when combining three histograms on one plot
 iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
 iris_virginica=iris_csv.loc[iris_csv["Class"]=="Iris-virginica"]
 iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
@@ -74,15 +80,14 @@ while flower < 3:
      flower=flower+1
 
 #Histogram Code - (need to add this to a function/loop later to loop through each variable rather than having 4 sets of very like code)
-#Add a few blank lies for presentation purposes
 #Add a header to the text file
-data = "The following plots are created and stored in this same directory\n\n"
+data = "The following plots are created and stored in this same directory"
 text_write(data)
-
+#Append the current completed action to the outputs list for printing upon script completion
 output_data = (f"Generating plots and saving to local directory and writing plot names to {FILENAME}")
 outputs.append(output_data)
 
-#Create a list just for Sepal Length
+#Create a list just for Sepal Length and generate a histogram
 sepal_l = []
 for iris in iris_csv['Sepal Length']:
     sepal_l.append(iris)
@@ -96,10 +101,11 @@ plt.hist(sepal_l)
 #Save the file
 plt.savefig("Sepal_Length_Histogram.png")
 #Wtite to the text file
-data = "\nSepal_Length_Histogram.png saved showing a plot of Sepal Lengths"
+data = "\n\tSepal_Length_Histogram.png"
 text_write(data)
 
-#Create a list just for Sepal Width 
+#Create a list just for Sepal Width and generate a histogram
+#Clear the previous plot
 plt.clf()
 sepal_w = []
 for iris in iris_csv['Sepal Width']:
@@ -111,10 +117,10 @@ plt.ylabel("Frequency")
 plt.hist(sepal_w)
 plt.savefig("Sepal_Width_Histogram.png")
 #Wtite to the text file
-data = "\nSepal_Width_Histogram.png saved showing a plot of Sepal Widths"
+data = "\n\tSepal_Width_Histogram.png"
 text_write(data)
 
-#Create a list just for Petal Length
+#Create a list just for Petal Length and generate a histogram
 plt.clf()
 petal_l = []
 for iris in iris_csv['Petal Length']:
@@ -126,10 +132,10 @@ plt.ylabel("Frequency")
 plt.hist(petal_l)
 plt.savefig("Petal_Length_Histogram.png")
 #Wtite to the text file
-data = "\nPetal_Length_Histogram.png saved showing a plot of Petal Lengths"
+data = "\n\tPetal_Length_Histogram.png"
 text_write(data)
 
-#Create a list just for Petal Width 
+#Create a list just for Petal Width and generate a histogram
 plt.clf()
 petal_w = []
 for iris in iris_csv['Petal Width']:
@@ -141,7 +147,7 @@ plt.ylabel("Frequency")
 plt.hist(petal_w)
 plt.savefig("Petal_Width_Histogram.png")
 #Wtite to the text file
-data = "\nPetal_Width_Histogram.png saved showing a plot of Sepal Lengths"
+data = "\n\tPetal_Width_Histogram.png"
 text_write(data)
 
 #Create a scatter plot to compare Sepal Width and Sepal Length
@@ -153,7 +159,7 @@ plt.ylabel('Sepal Width')
 plt.legend()
 plt.savefig("Sepal_Length | Sepal_Width Scatterplot.png")
 #Wtite to the text file
-data = "\nSepal_Length | Sepal_Width Scatterplot.png saved showing a plot of Sepal Lengths and Sepal Widths\n"
+data = "\n\tSepal_Length | Sepal_Width Scatterplot.png"
 text_write(data)
 
 #For the scatter plot to compare Petal Width and Petal Length
@@ -165,10 +171,10 @@ plt.ylabel('Petal Width')
 plt.legend()
 plt.savefig("Petal Length | Petal Width Scatterplot.png")
 #Wtite to the text file
-data = "Petal Length | Petal Width Scatterplot.png saved showing a plot of Petal Lengths and Petal Widths\n"
+data = "\n\tPetal Length | Petal Width Scatterplot.png"
 text_write(data)
 
-#Split out each flower type into seperate variables and print a sample plot with 3 data elements
+#Split out each flower type into seperate variables and print a sample histogram plot with 3 data elements
 plt.clf()
 iris_setosa.sort_values("Petal Length")
 iris_virginica.sort_values("Petal Length")
@@ -182,7 +188,7 @@ plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
 plt.legend()
 plt.savefig("Petal_Length_Comparison.png")
 #Wtite to the text file
-data = "Petal_Length_Comparison.png saved showing a plot comparing Petal Lengths for all three flower types\n"
+data = "\n\tPetal_Length_Comparison.png"
 text_write(data)
 
 #Plotting a Heatmap using seaborn to show correlation
@@ -197,7 +203,7 @@ sns.heatmap(iris_csv_sns.corr(method='pearson'), cmap="YlGnBu", annot=True);
 plt.title("Heatmap - Pearsons Correllation")
 plt.savefig("Heatmap.png")
 #Wtite to the text file
-data = "Heatmap.png saved showing a plot of person's correllation\n\n"
+data = "\n\tHeatmap Correlation.png\n\n"
 text_write(data)
 
 #Using inbuilt corr() to generate Pearson's correlation table
@@ -206,9 +212,11 @@ p_corr = iris_csv.corr(method='pearson')
 #Convert dataframe to string 
 data = p_corr.to_string()
 text_write(f"Pearson's Correlation of Dataset: \n {data}\n\n")
+#Append the current completed action to the outputs list for printing upon script completion
 output_data = (f"Writing Person's Correlation data to {FILENAME}")
 outputs.append(output_data)
 
+#Append the current completed action to the outputs list for printing upon script completion
 output_data = (f"Finished writing to {FILENAME}")
 outputs.append(output_data)
 
