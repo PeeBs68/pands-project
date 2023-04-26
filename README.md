@@ -17,7 +17,8 @@ VS Code: 1.74.3
     3. [Scatterplots](#43-scatterplots)
     4. [Heatmaps](#44-heatmaps)
     5. [Correlations](#45-correlations)
-5. [References](#5-References)
+5. [List of Plots](#5-list-of-plots)
+6. [References](#6-References)
 
 
 # 1. Introduction
@@ -106,7 +107,19 @@ However we can also see that there is a very weak negative relationship between 
 ## 4.5. Correlations 
 As well as using the Heatmap described above to graphically represent correlations in the data we can also use the inbuilt corr() function to generate a table showing the same data. From this table (which is exported to the analysis.txt file) we can see the same correlations as in the Heatmap, such as seeing that the relationship between Petal Length and Petal Width is very strong at .96
 
-# 5. References
+
+# 5. List of Plots
+| Filename | Description |
+| --- | ---|
+| Sepal_Length_Histogram.png | Histogram plotting Sepal Lengths |
+| Sepal_Width_Histogram.png | Histogram plotting Sepal Widths
+| Petal_Length_Histogram.png | Histogram plotting Petal Lengths
+| Petal_Width_Histogram.png | Histogram plottoing Petal Widths
+| Sepal_Length-Sepal_Width Scatterplot.png | Scatterplot plotting Sepal Lebngths and Sepal Widths
+| Petal Length-Petal Width Scatterplot.png | Scatterplot plotting Petal Lengths and Petal Widths
+| Petal_Length_Comparison.png | Histogram comparing Petal Lengths 
+| Heatmap Correlation.png | Heatmap plotting correlations
+# 6. References
 Links actually used in the code
 http://archive.ics.uci.edu/ml/datasets/Iris - iris data set repository   
 https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas - for adding column names to the data sheet   
