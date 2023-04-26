@@ -18,7 +18,8 @@ VS Code: 1.74.3
     4. [Heatmaps](#44-heatmaps)
     5. [Correlations](#45-correlations)
 5. [List of Plots](#5-list-of-plots)
-6. [References](#6-References)
+6. [Summary](#6-summary)
+7. [References](#7-References)
 
 
 # 1. Introduction
@@ -115,11 +116,14 @@ As well as using the Heatmap described above to graphically represent correlatio
 | Sepal_Width_Histogram.png | Histogram plotting Sepal Widths
 | Petal_Length_Histogram.png | Histogram plotting Petal Lengths
 | Petal_Width_Histogram.png | Histogram plottoing Petal Widths
-| Sepal_Length-Sepal_Width Scatterplot.png | Scatterplot plotting Sepal Lebngths and Sepal Widths
+| Sepal_Length-Sepal_Width Scatterplot.png | Scatterplot plotting Sepal Lengths and Sepal Widths
 | Petal Length-Petal Width Scatterplot.png | Scatterplot plotting Petal Lengths and Petal Widths
 | Petal_Length_Comparison.png | Histogram comparing Petal Lengths 
 | Heatmap Correlation.png | Heatmap plotting correlations
-# 6. References
+
+# 6. Summary
+Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descripting statistcs while also producing many different types of plots to analyse the data. 
+# 7. References
 Links actually used in the code
 http://archive.ics.uci.edu/ml/datasets/Iris - iris data set repository   
 https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas - for adding column names to the data sheet   
