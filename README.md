@@ -68,12 +68,11 @@ python3 analysis.py
 ```
 Sample Output:
 ```
-Created analysis.txt to show summary data
+Created analysis.txt to show summary data for the iris data set
 Writing summary for the combined data set to analysis.txt
-Writing summary data for Iris-setosa to analysis.txt
-Writing summary data for Iris-versicolor to analysis.txt
-Writing summary data for Iris-virginica to analysis.txt
+Writing summary data for each flower type to analysis.txt
 Generating plots and saving to local directory and writing plot names to analysis.txt
+Writing Person's Correlation data to analysis.txt
 Finished writing to analysis.txt
 ```
 
