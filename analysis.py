@@ -12,7 +12,7 @@ import seaborn as sns
 col_names =  ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Class"]
 iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
 
-#used later
+#Create a list of header names used for the describe function below
 headers1 = col_names[0:4]
 
 #create a list to hold ouput details for printing back to the console upon completion
@@ -42,7 +42,7 @@ data = iris_csv.shape
 text_write(f"The number of Rows, Columns in the data set are: {data}\n\n")
 
 #Column Names and Data Types
-#Method to supress terminal printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+#Inspiration on how to supress terminal printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
 import io
 buf = io.StringIO()
 iris_csv.info(buf=buf)
@@ -71,16 +71,15 @@ unique_class = iris_csv.Class.unique()
 
 #Code to gather and print individual stats for each flower type to the output file
 flower=0
+output_data = (f"Writing summary data for each flower type to {FILENAME}")
+outputs.append(output_data)
 while flower < 3:
      data = iris_csv.loc[iris_csv["Class"]==unique_class[flower]]
      data = data.describe().loc[['min', 'max', 'mean', 'std']]
-     output_data = (f"Writing summary data for {unique_class[flower]} to {FILENAME}")
-     outputs.append(output_data)
      text_write(f"Summary Data for {unique_class[flower]}: \n {data}\n\n")
      flower=flower+1
 
-#Histogram Code - (need to add this to a function/loop later to loop through each variable rather than having 4 sets of very like code)
-#Add a header to the text file
+#Histogram Code
 data = "The following plots are created and stored in this same directory"
 text_write(data)
 #Append the current completed action to the outputs list for printing upon script completion
@@ -191,13 +190,12 @@ plt.savefig("Petal_Length_Comparison.png")
 data = "\n\tPetal_Length_Comparison.png"
 text_write(data)
 
-#Plotting a Heatmap using seaborn to show correlation
+#Plotting a Heatmap using seaborn to show correlation with inspiration taken from the following sources:
 #https://practicaldatascience.co.uk/data-science/how-to-calculate-pearson-correlation-in-pandas
 #https://blog.quantinsti.com/creating-heatmap-using-python-seaborn/
 #https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
-#drop the Class column or else you'll get a float error - see below URL
-#https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
 plt.clf()
+#Inspiration on how to drop the Class column to avoid a float error taken from https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
 iris_csv_sns = iris_csv.drop("Class", axis=1)
 sns.heatmap(iris_csv_sns.corr(method='pearson'), cmap="YlGnBu", annot=True); 
 plt.title("Heatmap - Pearsons Correllation")
@@ -206,8 +204,7 @@ plt.savefig("Heatmap.png")
 data = "\n\tHeatmap Correlation.png\n\n"
 text_write(data)
 
-#Using inbuilt corr() to generate Pearson's correlation table
-#https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+#Inspiration on using the inbuilt corr() to generate Pearson's correlation table taken from https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 p_corr = iris_csv.corr(method='pearson')
 #Convert dataframe to string 
 data = p_corr.to_string()
@@ -225,9 +222,3 @@ for output in outputs:
      print (output)
 
 
-'''Things to do
-1 Look into using a list/dict for the plot attributes (titles, labels etc and could use a 
-loop/function maybe rather than 4 blocks of identical code)
-
-2 Clean up the output to the txt file for the plots so it reads better
-'''
