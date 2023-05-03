@@ -77,18 +77,25 @@ Finished writing to analysis.txt
 ```
 
 # 4. Results
-The results of the analysis are split between basic descriptive statistics of the data set, which are exported out to the analysis.txt file, and various plots of the data...
+The results of the analysis are split between basic descriptive statistics of the data set, which are exported out to the analysis.txt file, and various plots of the data using Histograms, Scatterplots and a Heatmap. We also generate and export a correlation table, using Pearson's correlation techniques, to the analysis.txt file.   
+The results of the ```shape``` function show us that the data set has 150 rows and 5 columns. And the ```info()``` function tells us that each attribute (Sepal Length, Sepal Width etc.) has 150 values with no null values in any column.
 ## 4.1. Descriptive Statistics
-Descriptive Statistics are first exported to the analysis.txt file for the entire data set. This gives an overall view of the min, max, mean and standard deviation for the four main data elements - Petal Length, Petal Width, Sepal Length and Sepal Width.   
+Descriptive Statistics are first exported to the analysis.txt file for the entire data set. This gives an overall view of the min, max, mean and standard deviation for the four main data attributes - Petal Length, Petal Width, Sepal Length and Sepal Width.  We can read from the results for example that Sepal Length has a min and max length of 4.3 and 7.9cm respectively. The mean value for Sepal Length is 5.84cm and the standard deviation is 0.83cm. 
+Petal Length on the other hand has min and max values of 1 and 6.9cm with a mean of 3.76cm. We can see from the results how such a range gives a standard deviation of 1.76cm.
 
-We then complement this be exporting the same statistics but split by the three flower types - Iris-setosa, Iris-versicolor and Iris-virginica. Reading this data we can easily pick out data such as seeing that the Iris-virginica has the longer Sepal Length of 7.9cm or that the Iris-setosa has the shortest Petal Length at 1cm compared to the Iris-versicolor (3cm) and Iris-virginica (4.5cm).   
+Although, the overall results described above are useful to see statistics on the data set as a whole, we then complement this by generating and exporting the same statistics but split by the three flower types - Iris-setosa, Iris-versicolor and Iris-virginica. 
+Reading this data we can easily pick out flower-specific statistics such as seeing that the Iris-virginica has the longest Sepal Length of 7.9cm compared to 5.8cm for the Iris-setosa and 7.0 for the Iris-versicolour.
+Or that the Iris-setosa has the shortest Petal Length at 1cm compared to the Iris-versicolor (3cm) and Iris-virginica (4.5cm).   
 
 ## 4.2. Histograms
 Using histograms we can plot the distribution of our data and see the frequency distributions. 
 
-We plot a total of four histograms - one for each category. A typical histogram would look like a bell curve with the majprity of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the other three categories showing non symmetrical dstribution.
+Initially we plot a total of four similar histograms, one for each variable - Petal Length, Petal Width, Sepal Length, Sepal Width. A typical histogram would look like a bell curve with the majprity of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the majority of values falling between 2.5 and 3.5cm. This matches back to the data produced earlier which showed a standard deviation of 0.43cm for Sepal Width meaning that the majority of values are close to the mean.   
+The plots for the other three variables all show non symmetrical dstribution. In particular if we look at the plot for Petal Length we can see that almost 50 flowers had a value of between 1 and 2cm with the remaining 100 data points showing a more normal distribution.   
+Referring back to our summary statistics we can see that the Iris-setosa family has min and max values of 1 and 1.9cm respectively which would explain why the plot loks as it does. The data from the other two flowers tend to show more normal plots with a lot more values appearing around the means of 4.2 and 5.6cm respectively.
 
-Lastly we generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other. From this we can conclude that the Petal Length for the Iris-Setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
+To expand on this analysis some more, we lastly generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other.   
+From this we can conclude that the Petal Length for the Iris-setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
 
 ## 4.3. Scatterplots
 Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length. 
