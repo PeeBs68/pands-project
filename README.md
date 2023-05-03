@@ -128,7 +128,10 @@ As well as using the Heatmap described above to graphically represent correlatio
 | Heatmap Correlation.png | Heatmap plotting correlations
 
 # 6. Summary
-Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descripting statistcs while also producing many different types of plots to analyse the data. 
+Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descriptive statistcs of the data set as a whole as well as on the individual flower types and do comparisons of the results. This data was all written to the analysis.txt file.   
+We also produced many different types of plots to analyse the data. We generate histograms to show the frequency distribution of the data for the four variables. We generate scatterplots to see if the data has linear relationships, or non at all as the data shows in some cases. Finally we generated a heatmap that can be used to find correlations between different variables so show if they have a strong relationship or not.   
+Lastly we generated a table for Pearson's correlation and exported it to the analysis.txt file. This shows the same data as the heatmap but just in a different, exportable format.   
+
 # 7. References
 Links actually used in the code
 http://archive.ics.uci.edu/ml/datasets/Iris - iris data set repository   
