@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # reading the CSV file and add column names
+# Information on how to add column names during the import taken from https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas
 col_names =  ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Class"]
 iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
 
@@ -42,7 +43,7 @@ data = iris_csv.shape
 text_write(f"The number of Rows, Columns in the data set are: {data}\n\n")
 
 #Column Names and Data Types
-#Inspiration on how to supress terminal printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+#Information on how to supress terminal printing taken from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
 import io
 buf = io.StringIO()
 iris_csv.info(buf=buf)
@@ -51,8 +52,10 @@ text_write(f"The column names and data types in the data set are: \n\n {data}\n\
 
 
 #Using describe() to show summary stats and specifying the attributes to display
+#Information on how to limit what the describe function displays taken from https://www.statology.org/pandas-describe-only-mean-std/ 
 data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
-#Convert the data to a str
+#Convert the data to a str in order to be able to export it
+#Information on converting a dataframe to a string taken from https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file 
 data = data.to_string(header=headers1, index=True)
 #Call the text_write function to write the data to the text file
 text_write(f"Summary of Dataset: \n {data}\n\n")
