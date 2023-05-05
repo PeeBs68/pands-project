@@ -122,10 +122,10 @@ As well as using the Heatmap described above to graphically represent correlatio
 | Sepal_Width_Histogram.png | Histogram plotting Sepal Widths
 | Petal_Length_Histogram.png | Histogram plotting Petal Lengths
 | Petal_Width_Histogram.png | Histogram plottoing Petal Widths
-| Sepal_Length-Sepal_Width Scatterplot.png | Scatterplot plotting Sepal Lengths and Sepal Widths
-| Petal Length-Petal Width Scatterplot.png | Scatterplot plotting Petal Lengths and Petal Widths
+| Sepal_Length_Sepal_Width_Scatterplot.png | Scatterplot plotting Sepal Lengths and Sepal Widths
+| Petal_Length_Petal_Width_Scatterplot.png | Scatterplot plotting Petal Lengths and Petal Widths
 | Petal_Length_Comparison.png | Histogram comparing Petal Lengths 
-| Heatmap Correlation.png | Heatmap plotting correlations
+| Correlation_Heatmap.png | Heatmap plotting correlations
 
 # 6. Summary
 Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descriptive statistcs of the data set as a whole as well as on the individual flower types and do comparisons of the results. This data was all written to the analysis.txt file.   
