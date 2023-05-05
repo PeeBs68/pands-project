@@ -14,9 +14,9 @@ col_names =  ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Cla
 iris_csv = pd.read_csv('iris.data', sep= ",", names=col_names, header=None)
 
 #Create a list of header names used for the describe function below
-headers1 = col_names[0:4]
+#headers1 = col_names[0:4]
 
-#create a list to hold ouput details for printing back to the console upon completion
+#create a list to hold output details for printing back to the console upon completion of the script
 outputs = []
 
 #Create the file to store the results
@@ -56,26 +56,22 @@ text_write(f"The column names and data types in the data set are: \n\n {data}\n\
 data = iris_csv.describe().loc[['min', 'max', 'mean', 'std']]
 #Convert the data to a str in order to be able to export it
 #Information on converting a dataframe to a string taken from https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file 
-data = data.to_string(header=headers1, index=True)
+data = data.to_string(header=col_names[0:4], index=True)
 #Call the text_write function to write the data to the text file
 text_write(f"Summary of Dataset: \n {data}\n\n")
 #Append the current completed action to the outputs list for printing upon script completion
 output_data = (f"Writing summary for the combined data set to {FILENAME}")
 outputs.append(output_data)
 
-#Create individual variables containing data for each flower types to be used later 
-#when combining three histograms on one plot
-iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
-iris_virginica=iris_csv.loc[iris_csv["Class"]=="Iris-virginica"]
-iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
-
 #Create a variable to store the unique classes of iris
-unique_class = iris_csv.Class.unique()
+#unique_class = iris_csv.Class.unique()
 
 #Code to gather and print individual stats for each flower type to the output file
-flower=0
 output_data = (f"Writing summary data for each flower type to {FILENAME}")
 outputs.append(output_data)
+#Create a variable to store the unique classes of iris
+unique_class = iris_csv.Class.unique()
+flower=0
 while flower < 3:
      data = iris_csv.loc[iris_csv["Class"]==unique_class[flower]]
      data = data.describe().loc[['min', 'max', 'mean', 'std']]
@@ -159,9 +155,9 @@ plt.title('Sepal Length | Sepal Width')
 plt.xlabel('Sepal length')
 plt.ylabel('Sepal Width')
 plt.legend()
-plt.savefig("Sepal_Length | Sepal_Width Scatterplot.png")
+plt.savefig("Sepal_Length_Sepal_Width_Scatterplot.png")
 #Wtite to the text file
-data = "\n\tSepal_Length | Sepal_Width Scatterplot.png"
+data = "\n\tSepal_Length_Sepal_Width_Scatterplot.png"
 text_write(data)
 
 #For the scatter plot to compare Petal Width and Petal Length
@@ -171,12 +167,15 @@ plt.title('Petal Length | Petal Width')
 plt.xlabel('Petal length')
 plt.ylabel('Petal Width')
 plt.legend()
-plt.savefig("Petal Length | Petal Width Scatterplot.png")
+plt.savefig("Petal_Length_Petal_Width_Scatterplot.png")
 #Wtite to the text file
-data = "\n\tPetal Length | Petal Width Scatterplot.png"
+data = "\n\tPetal_Length_Petal_Width_Scatterplot.png"
 text_write(data)
 
 #Split out each flower type into seperate variables and print a sample histogram plot with 3 data elements
+iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
+iris_virginica=iris_csv.loc[iris_csv["Class"]=="Iris-virginica"]
+iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
 plt.clf()
 iris_setosa.sort_values("Petal Length")
 iris_virginica.sort_values("Petal Length")
@@ -188,9 +187,9 @@ plt.hist(iris_setosa["Petal Length"],label='iris_setosa')
 plt.hist(iris_virginica["Petal Length"],label='iris_virginica')
 plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
 plt.legend()
-plt.savefig("Petal_Length_Comparison.png")
+plt.savefig("Petal_Length_Comparison_Histogram.png")
 #Wtite to the text file
-data = "\n\tPetal_Length_Comparison.png"
+data = "\n\tPetal_Length_Comparison_Histogram.png"
 text_write(data)
 
 #Plotting a Heatmap using seaborn to show correlation with inspiration taken from the following sources:
@@ -202,11 +201,12 @@ plt.clf()
 iris_csv_sns = iris_csv.drop("Class", axis=1)
 sns.heatmap(iris_csv_sns.corr(method='pearson'), cmap="YlGnBu", annot=True); 
 plt.title("Heatmap - Pearsons Correllation")
-plt.savefig("Heatmap.png")
+plt.savefig("Correlation_Heatmap.png")
 #Wtite to the text file
-data = "\n\tHeatmap Correlation.png\n\n"
+data = "\n\tCorrelation_Heatmap.png\n\n"
 text_write(data)
 
+#Correlation Table
 #Inspiration on using the inbuilt corr() to generate Pearson's correlation table taken from https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 p_corr = iris_csv.corr(method='pearson')
 #Convert dataframe to string 
