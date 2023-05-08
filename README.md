@@ -50,17 +50,17 @@ The iris data set is a two dimension array so in order to work with it with impo
 Using the inbuilt functions ```shape``` and ```info()``` we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to the text file. Typically the ```info()``` function prints back to the terminal but we supress this and write it only to the text file using code sourced from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
 
 
-For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function ```describe()``` we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the index vaules of the data set by specifying them using ```.loc[]```.
+For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function ```describe()``` we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the indexed values of the data set by specifying them using ```.loc[]```.
 https://www.statology.org/pandas-describe-only-mean-std/
 https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-describe
 
-Using a while loop we also present similar stats by flower type ... although we know there are 3 flower types we still use the count to get it and to be used oin our loop...
+Using a while loop we also present similar stats by flower type. Using the ```unique()``` function we extract the three flower types into a new variable ```unique_class``` and use that in a while loop along with the ```describe()``` function to extract the min, max, mean and standard deviation of each flower type and export it to the analysis.txt file.
 
 We create a new function ```text_write``` that is used whenever we want to write data to the text file. This function opens the file and writes the data. Using a function like this saves a number of lines of code and simplifies the script.
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
 
-In order to provide feedback to the user who runs the script, we create a list and populate it at various stages of execution with the details of what the script is doing. We then print this to the terminal upon completion of the script.
+In order to provide feedback to the user who runs the script, we create a list called ```outputs``` and populate it at various stages of execution with the details of what the script is doing at that time. We then print this back to the terminal upon completion of the script as feedback.
 
 Terminal Command:
 ```
@@ -133,24 +133,29 @@ We also produced many different types of plots to analyse the data. We generate 
 Lastly we generated a table for Pearson's correlation and exported it to the analysis.txt file. This shows the same data as the heatmap but just in a different, exportable format.   
 
 # 7. References
-Links actually used in the code
-http://archive.ics.uci.edu/ml/datasets/Iris - iris data set repository   
-https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas - for adding column names to the data sheet   
-https://www.statology.org/pandas-describe-only-mean-std/ - using the describe() function   
+
+http://archive.ics.uci.edu/ml/datasets/Iris - location of iris data set repository   
+https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas - details on adding column names to the data sheet during import process   
+https://www.statology.org/pandas-describe-only-mean-std/ - how to customise the output of the describe() function   
 https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o - help with scatterplots using the plt.clf() function   
-https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop - help with scatterplots   
+https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop - help with creating multiple scatterplots   
 https://medium.com/@avulurivenkatasaireddyexploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d - plotting suggestions   
 https://stackoverflow.com/questions/37787698/how-to-sort-pandas-dataframe-from-one-column - sorting dataframes   
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file)   
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - converting a d to a str (used when writing the summary to the text file)   
 
+**Other sources used for reference when deciding ways to approach the analysis**
 
-
-Usefull Links - TBD if to be included
 #https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
-Useful link here
+
 https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
+
 https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/ 
-http://rstudio-pubs-static.s3.amazonaws.com/450733_9a472ce9632f4ffbb2d6175aaaee5be6.html - some analysis
 
+http://rstudio-pubs-static.s3.amazonaws.com/450733_9a472ce9632f4ffbb2d6175aaaee5be6.html
 
+**General sources of reference**
+
+https://www.w3schools.com/python/   
+
+https://www.python.org/   
