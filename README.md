@@ -23,7 +23,7 @@ VS Code: 1.74.3
 
 
 # 1. Introduction
-The purpose of this project is to research the iris data set and write code (and documentation) in Python to analyse it. 
+The purpose of this project is to research the iris data set and write documentation and code to research it. 
 The iris data set is available to download from http://archive.ics.uci.edu/ml/datasets/Iris 
 
 # 2. Background
@@ -34,7 +34,7 @@ https://en.wikipedia.org/wiki/Iris_flower_data_set
 
 # 3. Methods
 An online search will reveal that the iris data set is very popular and has been researched and investigated by many in the past. The most popular analysis techniques involve using histograms to plot the individual attributes and using scatter plots to compare pairs of attributes. Basic descriptive statistics are also useful to present a summary of each attribute.
-Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
+https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
 My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
 Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc. For example, we create and call a function ```text_write()``` whenever we want to write data to the text file and call it from various stages within the code with the arguement ```data``` like this ```text_write(data)```.
@@ -47,7 +47,7 @@ To perform our analysis we firstly need to import the following python modules:
 
 The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas```read_csv()```function. During the reading of the file  we assign column names (which were not present in our original data set) for later use during our analysis.
 
-Using the inbuilt functions ```shape``` and ```info()``` we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to the text file. Typically the ```info()``` function prints back to the terminal but we supress this and write it only to the text file using code sourced from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info
+Using the inbuilt functions ```shape``` and ```info()``` we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to the text file. Typically the ```info()``` function prints back to the terminal but we supress this and write it only to the text file using code sourced from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info. This requires importing the io module ```import io``` which is used to manage file related input and output operations.
 
 
 For our analysis we will start with presenting basic descriptive statistics such as min, max, mean and standard deviation of each attribute. Using the inbuilt python function ```describe()``` we could quickly get a full set of summary statistics however this will also include some data not necessary needed for our analysis. So we instead specify the exact statistics we want using the indexed values of the data set by specifying them using ```.loc[]```.
@@ -56,11 +56,24 @@ https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-de
 
 Using a while loop we also present similar stats by flower type. Using the ```unique()``` function we extract the three flower types into a new variable ```unique_class``` and use that in a while loop along with the ```describe()``` function to extract the min, max, mean and standard deviation of each flower type and export it to the analysis.txt file.
 
-We create a new function ```text_write``` that is used whenever we want to write data to the text file. This function opens the file and writes the data. Using a function like this saves a number of lines of code and simplifies the script.
-https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - (used when writing the summary to the text file) 
+Following this we move on to generating various plots to graphically describe the data through histograms and scatterplots. 
+For the histograms we have four blocks of code - one for each of the attributes: Petal Length, Petal Width, Sepal Length and Sepal Width. The histogram code starts with creating a new list to store the data and populates it using a for loop that runs through the data set pulling out the data for each variable (e.g. Petal Length). the data is then sorted before generating the histogram using the ```sort()``` function. We then add a plot title and x and y labels before generating the plot and save it to our directory using ```plt.savefig()```. Finally we write a comment to the text file with the plot name for reference. 
+Plots for the remaining three attributes (Petal Width, Sepal Length and Sepal Width) are created in a simalar manner. But before creating each new plot we call ```plt.clf()``` to clear the previous plot and start fresh each time.
 
-In order to provide feedback to the user who runs the script, we create a list called ```outputs``` and populate it at various stages of execution with the details of what the script is doing at that time. We then print this back to the terminal upon completion of the script as feedback.
+Next we create two scatterplots to compare two sets of attributes - Petal Length/Petal Width and Sepal Length/Sepal Width. The blocks of code for these is quite similar to the histogram blocks of code but we use ```plt.scatter``` as opposed to ```plot.hist``` to generate the plots.
+
+The next plot we generate is a histogram comparing three sets of data - Petal Length - for each flower type. To generate the data for the histogram we experimented with using ```.loc``` to return the required data into three seperate lists (as opposed to the method used earlier to generate the individual histograms) with a list for each flower type. Once we have the data, the actual plotting code is similar to the above but plot the three sets of data using ```plt.hist``` for each one. This results in a single plot with three sets of data.
+
+The final plot we generate is a Heatmap using the seaborn module imported earlier. Seeing as we added the ```Class``` to our dataframe we must remove it before we can create the heatmap using ```.drop("Class", axes=1)``` to avoid a float error.
+https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
+We then generate the heatmap using ```sns.heatmap``` and pass the values ```method='pearson'``` to use Pearson's correllation techniques and also specify the colour map to use with ```cmap="YlGnBl"```.
+As can be seen in the analysis.py file we need a lot less lines of code to generate this plot using seaborn than we do generating the histograms or scatterplots using matplotlib which show the power of seaborn.
+
+We create a new function ```text_write``` that is used whenever we want to write data to the text file. This function opens the file and writes the data. Using a function like this saves a number of lines of code and simplifies the script. In order to write the data back to the text file we need to convert it to a string type each time and this is completed using ```to_string()```.
+https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file   
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
+
+In order to provide feedback to the user who runs the script, we create a list called ```outputs``` and populate it at various stages of execution with the details of what the script is doing at that point in time. We then print this back to the terminal upon completion of the script as feedback.
 
 Terminal Command:
 ```
