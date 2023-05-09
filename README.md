@@ -37,7 +37,7 @@ An online search will reveal that the iris data set is very popular and has been
 https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
 My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
-Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc. For example, we create and call a function ```text_write()``` whenever we want to write data to the text file and call it from various stages within the code with the arguement ```data``` like this ```text_write(data)```.
+Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc. For example, we create and call a function ```text_write()``` whenever we want to write data to the text file and call it from various stages within the code with the argument ```data``` like this ```text_write(data)```.
 
 To perform our analysis we firstly need to import the following python modules:   
     pandas - module used for data analysis and manipulation of tabular data   
@@ -58,15 +58,15 @@ Using a while loop we also present similar stats by flower type. Using the ```un
 
 Following this we move on to generating various plots to graphically describe the data through histograms and scatterplots. 
 For the histograms we have four blocks of code - one for each of the attributes: Petal Length, Petal Width, Sepal Length and Sepal Width. The histogram code starts with creating a new list to store the data and populates it using a for loop that runs through the data set pulling out the data for each variable (e.g. Petal Length). the data is then sorted before generating the histogram using the ```sort()``` function. We then add a plot title and x and y labels before generating the plot and save it to our directory using ```plt.savefig()```. Finally we write a comment to the text file with the plot name for reference. 
-Plots for the remaining three attributes (Petal Width, Sepal Length and Sepal Width) are created in a simalar manner. But before creating each new plot we call ```plt.clf()``` to clear the previous plot and start fresh each time.
+Plots for the remaining three attributes (Petal Width, Sepal Length and Sepal Width) are created in a similar manner. But before creating each new plot we call ```plt.clf()``` to clear the previous plot and start fresh each time.
 
 Next we create two scatterplots to compare two sets of attributes - Petal Length/Petal Width and Sepal Length/Sepal Width. The blocks of code for these is quite similar to the histogram blocks of code but we use ```plt.scatter``` as opposed to ```plot.hist``` to generate the plots.
 
-The next plot we generate is a histogram comparing three sets of data - Petal Length - for each flower type. To generate the data for the histogram we experimented with using ```.loc``` to return the required data into three seperate lists (as opposed to the method used earlier to generate the individual histograms) with a list for each flower type. Once we have the data, the actual plotting code is similar to the above but plot the three sets of data using ```plt.hist``` for each one. This results in a single plot with three sets of data.
+The next plot we generate is a histogram comparing thePetal Length - for each flower type. To generate the data for the histogram we experimented with using ```.loc``` to return the required data into three separate lists (as opposed to the method used earlier to generate the individual histograms) with a list for each flower type. Once we have the data, the actual plotting code is similar to the above but plot the three sets of data using ```plt.hist``` for each one. This results in a single plot with three sets of data.
 
 The final plot we generate is a Heatmap using the seaborn module imported earlier. Seeing as we added the ```Class``` to our dataframe we must remove it before we can create the heatmap using ```.drop("Class", axes=1)``` to avoid a float error.
 https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
-We then generate the heatmap using ```sns.heatmap``` and pass the values ```method='pearson'``` to use Pearson's correllation techniques and also specify the colour map to use with ```cmap="YlGnBl"```.
+We then generate the heatmap using ```sns.heatmap``` and pass the values ```method='pearson'``` to use Pearson's correlation techniques and also specify the colour map to use with ```cmap="YlGnBl"```.
 As can be seen in the analysis.py file we need a lot less lines of code to generate this plot using seaborn than we do generating the histograms or scatterplots using matplotlib which show the power of seaborn.
 
 We create a new function ```text_write``` that is used whenever we want to write data to the text file. This function opens the file and writes the data. Using a function like this saves a number of lines of code and simplifies the script. In order to write the data back to the text file we need to convert it to a string type each time and this is completed using ```to_string()```.
@@ -103,22 +103,22 @@ Also we can see that the Iris-setosa has the shortest Petal Length at 1cm compar
 ## 4.2. Histograms
 Using histograms we can plot the distribution of our data and see the frequency distributions. 
 
-Initially we plot a total of four similar histograms, one for each variable - Petal Length, Petal Width, Sepal Length, Sepal Width. A typical histogram would look like a bell curve with the majprity of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the majority of values falling between 2.5 and 3.5cm. This matches back to the data produced earlier which showed a standard deviation of 0.43cm for Sepal Width meaning that the majority of values are close to the mean.   
-The plots for the other three variables all show non symmetrical dstribution. In particular if we look at the plot for Petal Length we can see that almost 50 flowers had a value of between 1 and 2cm with the remaining 100 data points showing a more normal distribution.   
-Referring back to our summary statistics we can see that the Iris-setosa family has min and max values of 1 and 1.9cm respectively which would explain why the plot loks as it does. The data from the other two flowers tend to show more normal plots with a lot more values appearing around the means of 4.2 and 5.6cm respectively.
+Initially we plot a total of four similar histograms, one for each variable - Petal Length, Petal Width, Sepal Length, Sepal Width. A typical histogram would look like a bell curve with the majority of values falling in or around the middle of the plot to show a normal distribution. However in our plots we can see that only the Sepal Width values show a normal distribution with the majority of values falling between 2.5 and 3.5cm. This matches back to the data produced earlier which showed a standard deviation of 0.43cm for Sepal Width meaning that the majority of values are close to the mean.   
+The plots for the other three variables all show non symmetrical distribution. In particular if we look at the plot for Petal Length we can see that almost 50 flowers had a value of between 1 and 2cm with the remaining 100 data points showing a more normal distribution.   
+Referring back to our summary statistics we can see that the Iris-setosa family has min and max values of 1 and 1.9cm respectively which would explain why the plot looks as it does. The data from the other two flowers tend to show more normal plots with a lot more values appearing around the means of 4.2 and 5.6cm respectively.
 
 To expand on this analysis some more, we lastly generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other.   
 From this we can conclude that the Petal Length for the Iris-setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
 
 ## 4.3. Scatterplots
-Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length. 
+Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationship between Sepal Width and Sepal Length. 
 
 We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Length. This indicates a very strong relationship between the two variables.
 
 However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two variables.
 
 ## 4.4. Heatmaps   
-Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares whowing a stronge relationship and the lighter yellow squares showing a weak relationship. 
+Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares showing a strong relationship and the lighter yellow squares showing a weak relationship. 
 
 From the heatmap we can easily pick out which variables have a strong or a weak relationship. For example, we can see that there is a strong positive relationship between Petal Length and Petal Width (.96) meaning that as the Petal Length increases so does the Petal Width. 
 
@@ -141,20 +141,28 @@ As well as using the Heatmap described above to graphically represent correlatio
 | Correlation_Heatmap.png | Heatmap plotting correlations
 
 # 6. Summary
-Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descriptive statistcs of the data set as a whole as well as on the individual flower types and do comparisons of the results. This data was all written to the analysis.txt file.   
-We also produced many different types of plots to analyse the data. We generate histograms to show the frequency distribution of the data for the four variables. We generate scatterplots to see if the data has linear relationships, or non at all as the data shows in some cases. Finally we generated a heatmap that can be used to find correlations between different variables so show if they have a strong relationship or not.   
+Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descriptive statistics of the data set as a whole as well as on the individual flower types and do comparisons of the results. This data was all written to the analysis.txt file.   
+We also produced many different types of plots to analyse the data. We generate histograms to show the frequency distribution of the data for the four variables. We generate scatterplots to see if the data has linear relationships, or none at all as the data shows in some cases. Finally we generated a heatmap that can be used to find correlations between different variables so show if they have a strong relationship or not.   
 Lastly we generated a table for Pearson's correlation and exported it to the analysis.txt file. This shows the same data as the heatmap but just in a different, exportable format.   
 
 # 7. References
 
 http://archive.ics.uci.edu/ml/datasets/Iris - location of iris data set repository   
+
 https://stackoverflow.com/questions/31645466/give-column-name-when-read-csv-file-pandas - details on adding column names to the data sheet during import process   
+
 https://www.statology.org/pandas-describe-only-mean-std/ - how to customise the output of the describe() function   
+
 https://stackoverflow.com/questions/6916978/how-do-i-tell-matplotlib-to-create-a-second-new-plot-then-later-plot-on-the-o - help with scatterplots using the plt.clf() function   
+
 https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-getting-overwritten-while-using-for-loop - help with creating multiple scatterplots   
+
 https://medium.com/@avulurivenkatasaireddyexploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d - plotting suggestions   
+
 https://stackoverflow.com/questions/37787698/how-to-sort-pandas-dataframe-from-one-column - sorting dataframes   
+
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
+
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - converting a dataframe to a string (used when writing the summary to the text file)   
 
 **Other sources used for reference when deciding ways to approach the analysis**
