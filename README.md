@@ -37,7 +37,7 @@ An online search will reveal that the iris data set is very popular and has been
 Good link here - https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
 My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
-Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc.
+Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc. For example, we create and call a function ```text_write()``` whenever we want to write data to the text file and call it from various stages within the code with the arguement ```data``` like this ```text_write(data)```.
 
 To perform our analysis we firstly need to import the following python modules:   
     pandas - module used for data analysis and manipulation of tabular data   
@@ -83,9 +83,9 @@ The results of the ```shape``` function show us that the data set has 150 rows a
 Descriptive Statistics are first exported to the analysis.txt file for the entire data set. This gives an overall view of the min, max, mean and standard deviation for the four main data attributes - Petal Length, Petal Width, Sepal Length and Sepal Width.  We can read from the results for example that Sepal Length has a min and max length of 4.3 and 7.9cm respectively. The mean value for Sepal Length is 5.84cm and the standard deviation is 0.83cm. 
 Petal Length on the other hand has min and max values of 1 and 6.9cm with a mean of 3.76cm. We can see from the results how such a range gives a standard deviation of 1.76cm.
 
-Although, the overall results described above are useful to see statistics on the data set as a whole, we then complement this by generating and exporting the same statistics but split by the three flower types - Iris-setosa, Iris-versicolor and Iris-virginica. 
-Reading this data we can easily pick out flower-specific statistics such as seeing that the Iris-virginica has the longest Sepal Length of 7.9cm compared to 5.8cm for the Iris-setosa and 7.0 for the Iris-versicolour.
-Or that the Iris-setosa has the shortest Petal Length at 1cm compared to the Iris-versicolor (3cm) and Iris-virginica (4.5cm).   
+Although the overall results described above are useful to see statistics on the data set as a whole, we then complement this by generating and exporting the same statistics but split by the three flower types: Iris-setosa, Iris-versicolor and Iris-virginica. 
+Reading this data we can easily pick out flower-specific statistics such as seeing that the Iris-virginica has the longest Sepal Length of 7.9cm compared to 5.8cm for the Iris-setosa and 7.0cm for the Iris-versicolour.
+Also we can see that the Iris-setosa has the shortest Petal Length at 1cm compared to the Iris-versicolor (3cm) and Iris-virginica (4.5cm).   
 
 ## 4.2. Histograms
 Using histograms we can plot the distribution of our data and see the frequency distributions. 
@@ -100,19 +100,19 @@ From this we can conclude that the Petal Length for the Iris-setosa is a lot sma
 ## 4.3. Scatterplots
 Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationahip between Sepal Width and Sepal Length. 
 
-We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Length. This indicates a very strong relationship between the two.
+We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Length. This indicates a very strong relationship between the two variables.
 
-However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two.
+However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two variables.
 
 ## 4.4. Heatmaps   
-Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares whosing a stronge relationship and the lighter yellow squares showing a weak relationship. 
+Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares whowing a stronge relationship and the lighter yellow squares showing a weak relationship. 
 
 From the heatmap we can easily pick out which variables have a strong or a weak relationship. For example, we can see that there is a strong positive relationship between Petal Length and Petal Width (.96) meaning that as the Petal Length increases so does the Petal Width. 
 
 However we can also see that there is a very weak negative relationship between Sepal Width and Sepal Length (-.11) indicating that as one variable increases the other tends to decrease.
 
 ## 4.5. Correlations 
-As well as using the Heatmap described above to graphically represent correlations in the data we can also use the inbuilt corr() function to generate a table showing the same data. From this table (which is exported to the analysis.txt file) we can see the same correlations as in the Heatmap, such as seeing that the relationship between Petal Length and Petal Width is very strong at .96
+As well as using the Heatmap described above to graphically represent correlations in the data we can also use the inbuilt ```corr()``` function to generate a table showing the same data. From this table (which is exported to the analysis.txt file) we can see the same correlations as in the Heatmap, such as seeing that the relationship between Petal Length and Petal Width is very strong at .96
 
 
 # 5. List of Plots
@@ -142,11 +142,11 @@ https://stackoverflow.com/questions/36512890/python-matplotlib-saved-images-gett
 https://medium.com/@avulurivenkatasaireddyexploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d - plotting suggestions   
 https://stackoverflow.com/questions/37787698/how-to-sort-pandas-dataframe-from-one-column - sorting dataframes   
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file - converting a dataframe to a string (used when writing the summary to the text file)   
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - converting a d to a str (used when writing the summary to the text file)   
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - converting a dataframe to a string (used when writing the summary to the text file)   
 
 **Other sources used for reference when deciding ways to approach the analysis**
 
-#https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
+https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 
 https://www.youtube.com/watch?v=vmEHCJofslg&start=1068
 
