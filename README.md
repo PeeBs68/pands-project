@@ -113,7 +113,7 @@ From this we can conclude that the Petal Length for the Iris-setosa is a lot sma
 ## 4.3. Scatterplots
 Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationship between Sepal Width and Sepal Length. 
 
-We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Length. This indicates a very strong relationship between the two variables.
+We can see a very linear progression of Petal Length and Petal Width indicating that as the Petal Length increases so does Petal Width. This indicates a very strong relationship between the two variables.
 
 However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two variables.
 
