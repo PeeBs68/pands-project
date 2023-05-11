@@ -171,6 +171,8 @@ https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-data
 
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html - converting a dataframe to a string (used when writing the summary to the text file)   
 
+#https://codesolid.com/matplotlib-vs-seaborn/#aioseo-scatter---matplotlib-vs-seaborn - using seaborn to generate scatterplots   
+
 **Other sources used for reference when deciding ways to approach the analysis**
 
 https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
