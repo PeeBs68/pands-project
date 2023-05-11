@@ -154,42 +154,53 @@ plt.scatter(iris_csv['Sepal Length'], iris_csv['Sepal Width'], label='Sepal Leng
 plt.title('Sepal Length | Sepal Width')
 plt.xlabel('Sepal length (cm)')
 plt.ylabel('Sepal Width (cm)')
-plt.legend()
+#plt.legend()
 plt.savefig("Sepal_Length_Sepal_Width_Scatterplot.png")
 #Wtite to the text file
 data = "\n\tSepal_Length_Sepal_Width_Scatterplot.png"
 text_write(data)
 
-#For the scatter plot to compare Petal Width and Petal Length
+#Create a scatter plot to compare Petal Width and Petal Length
 plt.clf()
 plt.scatter(iris_csv['Petal Length'], iris_csv['Petal Width'], label='Petal Length | Petal Width\n')
 plt.title('Petal Length | Petal Width')
 plt.xlabel('Petal length (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.legend()
+#plt.legend()
 plt.savefig("Petal_Length_Petal_Width_Scatterplot.png")
 #Wtite to the text file
 data = "\n\tPetal_Length_Petal_Width_Scatterplot.png"
 text_write(data)
 
 #Scatterplots using seaborn with colours for each flower type
-#https://codesolid.com/matplotlib-vs-seaborn/#aioseo-scatter---matplotlib-vs-seaborn
 plt.clf()
+#Define the data for x and y axis
 x_axis = iris_csv['Petal Length']
 y_axis = iris_csv['Petal Width']
+#Add a title and lables
 plt.title("Petal length | Petal Width")
+plt.xlabel('Petal Length (cm)')
+plt.ylabel('Petal Width (cm)')
+#Create and save the plot
 sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
 plt.savefig("Petal_Length_Petal_Width_Scatterplot_Seaborn.png")
-data = "\n\tPetal_Length_Petal_Width_Scatterplot - with colours.png\n\n"
+#Wtite to the text file
+data = "\n\tPetal_Length_Petal_Width_Scatterplot - by flower type.png"
 text_write(data)
 
 plt.clf()
+#Define the data for x and y axis
 x_axis = iris_csv['Sepal Length']
 y_axis = iris_csv['Sepal Width']
+#Add a title and lables
 plt.title("Sepal length | Sepal width")
+plt.xlabel('Petal Length (cm)')
+plt.ylabel('Petal Width (cm)')
+#Create and save the plot
 sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
 plt.savefig("Sepal_Length_Sepal_Width_Scatterplot_Seaborn.png")
-data = "\n\tSepal_Length_Sepal_Width_Scatterplot - with colours.png\n\n"
+#Wtite to the text file
+data = "\n\tSepal_Length_Sepal_Width_Scatterplot - by flower type.png"
 text_write(data)
 
 #Split out each flower type into seperate variables and print a sample histogram plot with 3 data elements
@@ -197,12 +208,15 @@ iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
 iris_virginica=iris_csv.loc[iris_csv["Class"]=="Iris-virginica"]
 iris_versicolor=iris_csv.loc[iris_csv["Class"]=="Iris-versicolor"]
 plt.clf()
+#Sort the data
 iris_setosa.sort_values("Petal Length")
 iris_virginica.sort_values("Petal Length")
 iris_versicolor.sort_values("Petal Length")
+#Add title and labels
 plt.title("Petal Length Comparison")
 plt.xlabel("Length (cm)")
 plt.ylabel("Frequency")
+#create the plots
 plt.hist(iris_setosa["Petal Length"],label='iris_setosa')
 plt.hist(iris_virginica["Petal Length"],label='iris_virginica')
 plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
