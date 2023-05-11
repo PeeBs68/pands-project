@@ -63,3 +63,216 @@ Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
 Petal Length      0.871754    -0.420516      1.000000     0.962757
 Petal Width       0.817954    -0.356544      0.962757     1.000000
 
+This file shows the output of the analysis performed on the iris data set
+
+The number of Rows, Columns in the data set are: (150, 5)
+
+The column names and data types in the data set are: 
+
+ <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Sepal Length  150 non-null    float64
+ 1   Sepal Width   150 non-null    float64
+ 2   Petal Length  150 non-null    float64
+ 3   Petal Width   150 non-null    float64
+ 4   Class         150 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.0+ KB
+
+
+Summary of Dataset: 
+      Sepal Length Sepal Width Petal Length Petal Width
+min      4.300000    2.000000     1.000000    0.100000
+max      7.900000    4.400000     6.900000    2.500000
+mean     5.843333    3.054000     3.758667    1.198667
+std      0.828066    0.433594     1.764420    0.763161
+
+Summary Data for Iris-setosa: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.30000     2.300000      1.000000      0.10000
+max        5.80000     4.400000      1.900000      0.60000
+mean       5.00600     3.418000      1.464000      0.24400
+std        0.35249     0.381024      0.173511      0.10721
+
+Summary Data for Iris-versicolor: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.900000     2.000000      3.000000     1.000000
+max       7.000000     3.400000      5.100000     1.800000
+mean      5.936000     2.770000      4.260000     1.326000
+std       0.516171     0.313798      0.469911     0.197753
+
+Summary Data for Iris-virginica: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.90000     2.200000      4.500000      1.40000
+max        7.90000     3.800000      6.900000      2.50000
+mean       6.58800     2.974000      5.552000      2.02600
+std        0.63588     0.322497      0.551895      0.27465
+
+The following plots are created and stored in this same directory
+	Sepal_Length_Histogram.png
+	Sepal_Width_Histogram.png
+	Petal_Length_Histogram.png
+	Petal_Width_Histogram.png
+	Sepal_Length_Sepal_Width_Scatterplot.png
+	Petal_Length_Petal_Width_Scatterplot.png
+	Petal_Length_Petal_Width_Scatterplot - with colours.png
+
+
+	Sepal_Length_Sepal_Width_Scatterplot - with colours.png
+
+
+	Petal_Length_Comparison_Histogram.png
+	Correlation_Heatmap.png
+
+Pearson's Correlation of Dataset: 
+               Sepal Length  Sepal Width  Petal Length  Petal Width
+Sepal Length      1.000000    -0.109369      0.871754     0.817954
+Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
+Petal Length      0.871754    -0.420516      1.000000     0.962757
+Petal Width       0.817954    -0.356544      0.962757     1.000000
+
+This file shows the output of the analysis performed on the iris data set
+
+The number of Rows, Columns in the data set are: (150, 5)
+
+The column names and data types in the data set are: 
+
+ <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Sepal Length  150 non-null    float64
+ 1   Sepal Width   150 non-null    float64
+ 2   Petal Length  150 non-null    float64
+ 3   Petal Width   150 non-null    float64
+ 4   Class         150 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.0+ KB
+
+
+Summary of Dataset: 
+      Sepal Length Sepal Width Petal Length Petal Width
+min      4.300000    2.000000     1.000000    0.100000
+max      7.900000    4.400000     6.900000    2.500000
+mean     5.843333    3.054000     3.758667    1.198667
+std      0.828066    0.433594     1.764420    0.763161
+
+Summary Data for Iris-setosa: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.30000     2.300000      1.000000      0.10000
+max        5.80000     4.400000      1.900000      0.60000
+mean       5.00600     3.418000      1.464000      0.24400
+std        0.35249     0.381024      0.173511      0.10721
+
+Summary Data for Iris-versicolor: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.900000     2.000000      3.000000     1.000000
+max       7.000000     3.400000      5.100000     1.800000
+mean      5.936000     2.770000      4.260000     1.326000
+std       0.516171     0.313798      0.469911     0.197753
+
+Summary Data for Iris-virginica: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.90000     2.200000      4.500000      1.40000
+max        7.90000     3.800000      6.900000      2.50000
+mean       6.58800     2.974000      5.552000      2.02600
+std        0.63588     0.322497      0.551895      0.27465
+
+The following plots are created and stored in this same directory
+	Sepal_Length_Histogram.png
+	Sepal_Width_Histogram.png
+	Petal_Length_Histogram.png
+	Petal_Width_Histogram.png
+	Sepal_Length_Sepal_Width_Scatterplot.png
+	Petal_Length_Petal_Width_Scatterplot.png
+	Petal_Length_Petal_Width_Scatterplot - with colours.png
+
+
+	Sepal_Length_Sepal_Width_Scatterplot - with colours.png
+
+
+	Petal_Length_Comparison_Histogram.png
+	Correlation_Heatmap.png
+
+Pearson's Correlation of Dataset: 
+               Sepal Length  Sepal Width  Petal Length  Petal Width
+Sepal Length      1.000000    -0.109369      0.871754     0.817954
+Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
+Petal Length      0.871754    -0.420516      1.000000     0.962757
+Petal Width       0.817954    -0.356544      0.962757     1.000000
+
+This file shows the output of the analysis performed on the iris data set
+
+The number of Rows, Columns in the data set are: (150, 5)
+
+The column names and data types in the data set are: 
+
+ <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Sepal Length  150 non-null    float64
+ 1   Sepal Width   150 non-null    float64
+ 2   Petal Length  150 non-null    float64
+ 3   Petal Width   150 non-null    float64
+ 4   Class         150 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.0+ KB
+
+
+Summary of Dataset: 
+      Sepal Length Sepal Width Petal Length Petal Width
+min      4.300000    2.000000     1.000000    0.100000
+max      7.900000    4.400000     6.900000    2.500000
+mean     5.843333    3.054000     3.758667    1.198667
+std      0.828066    0.433594     1.764420    0.763161
+
+Summary Data for Iris-setosa: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.30000     2.300000      1.000000      0.10000
+max        5.80000     4.400000      1.900000      0.60000
+mean       5.00600     3.418000      1.464000      0.24400
+std        0.35249     0.381024      0.173511      0.10721
+
+Summary Data for Iris-versicolor: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min       4.900000     2.000000      3.000000     1.000000
+max       7.000000     3.400000      5.100000     1.800000
+mean      5.936000     2.770000      4.260000     1.326000
+std       0.516171     0.313798      0.469911     0.197753
+
+Summary Data for Iris-virginica: 
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+min        4.90000     2.200000      4.500000      1.40000
+max        7.90000     3.800000      6.900000      2.50000
+mean       6.58800     2.974000      5.552000      2.02600
+std        0.63588     0.322497      0.551895      0.27465
+
+The following plots are created and stored in this same directory
+	Sepal_Length_Histogram.png
+	Sepal_Width_Histogram.png
+	Petal_Length_Histogram.png
+	Petal_Width_Histogram.png
+	Sepal_Length_Sepal_Width_Scatterplot.png
+	Petal_Length_Petal_Width_Scatterplot.png
+	Petal_Length_Petal_Width_Scatterplot - with colours.png
+
+
+	Sepal_Length_Sepal_Width_Scatterplot - with colours.png
+
+
+	Petal_Length_Comparison_Histogram.png
+	Correlation_Heatmap.png
+
+Pearson's Correlation of Dataset: 
+               Sepal Length  Sepal Width  Petal Length  Petal Width
+Sepal Length      1.000000    -0.109369      0.871754     0.817954
+Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
+Petal Length      0.871754    -0.420516      1.000000     0.962757
+Petal Width       0.817954    -0.356544      0.962757     1.000000
+

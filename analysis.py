@@ -172,6 +172,26 @@ plt.savefig("Petal_Length_Petal_Width_Scatterplot.png")
 data = "\n\tPetal_Length_Petal_Width_Scatterplot.png"
 text_write(data)
 
+#Scatterplots using seaborn with colours for each flower type
+#https://codesolid.com/matplotlib-vs-seaborn/#aioseo-scatter---matplotlib-vs-seaborn
+plt.clf()
+x_axis = iris_csv['Petal Length']
+y_axis = iris_csv['Petal Width']
+plt.title("Petal length | Petal Width")
+sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
+plt.savefig("Petal_Length_Petal_Width_Scatterplot_Seaborn.png")
+data = "\n\tPetal_Length_Petal_Width_Scatterplot - with colours.png\n\n"
+text_write(data)
+
+plt.clf()
+x_axis = iris_csv['Sepal Length']
+y_axis = iris_csv['Sepal Width']
+plt.title("Sepal length | Sepal width")
+sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
+plt.savefig("Sepal_Length_Sepal_Width_Scatterplot_Seaborn.png")
+data = "\n\tSepal_Length_Sepal_Width_Scatterplot - with colours.png\n\n"
+text_write(data)
+
 #Split out each flower type into seperate variables and print a sample histogram plot with 3 data elements
 iris_setosa=iris_csv.loc[iris_csv["Class"]=="Iris-setosa"]
 iris_virginica=iris_csv.loc[iris_csv["Class"]=="Iris-virginica"]
