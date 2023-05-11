@@ -194,8 +194,8 @@ x_axis = iris_csv['Sepal Length']
 y_axis = iris_csv['Sepal Width']
 #Add a title and lables
 plt.title("Sepal length | Sepal width")
-plt.xlabel('Petal Length (cm)')
-plt.ylabel('Petal Width (cm)')
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Sepal Width (cm)')
 #Create and save the plot
 sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
 plt.savefig("Sepal_Length_Sepal_Width_Scatterplot_Seaborn.png")
