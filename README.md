@@ -12,7 +12,7 @@ VS Code: 1.74.3
 2. [Background](#2-Background)
 3. [Methods](#3-Methods)
 4. [Results](#4-Results)
-    1. [Descriptive Stats](#41-descriptive-statistics)
+    1. [Descriptive Statistics](#41-descriptive-statistics)
     2. [Histograms](#42-histograms)
     3. [Scatterplots](#43-scatterplots)
     4. [Heatmaps](#44-heatmaps)
@@ -37,7 +37,7 @@ An online search will reveal that the iris data set is very popular and has been
 https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/   
 
 My approach was to initially write simple code to perform the analysis which meant a lot of duplicate code which although completed the task, wasn't very clean or efficient. 
-Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc. For example, we create and call a function ```text_write()``` whenever we want to write data to the text file and call it from various stages within the code with the argument ```data``` like this ```text_write(data)```.
+Once all the code was working I then set about cleaning it up and removing duplicates where possible through the use of functions etc. For example, we create and call a function ```text_write()``` whenever we want to write data to the text file and call it from various stages within the code with the argument ```data``` through ```text_write(data)```.
 
 To perform our analysis we firstly need to import the following python modules:   
     pandas - module used for data analysis and manipulation of tabular data   
@@ -45,7 +45,7 @@ To perform our analysis we firstly need to import the following python modules:
     matplotlib - module for plotting data and creating graphical representations of data   
     seaborn - module for statistical plotting and data visualisation   
 
-The iris data set is a two dimension array so in order to work with it with import it as a csv file using the pandas```read_csv()```function. During the reading of the file  we assign column names (which were not present in our original data set) for later use during our analysis.
+The iris data set is a two dimension array so in order to work with it we import it as a csv file using the pandas```read_csv()```function. During the reading of the file  we assign column names (which were not present in our original data set) for later use during our analysis.
 
 Using the inbuilt functions ```shape``` and ```info()``` we firstly generate basic information about our data set such as the number of rows and columns and also the column names and data types. These details are written to the text file. Typically the ```info()``` function prints back to the terminal but we supress this and write it only to the text file using code sourced from https://stackoverflow.com/questions/39440253/how-to-return-a-string-from-pandas-dataframe-info. This requires importing the io module ```import io``` which is used to manage file related input and output operations.
 
@@ -57,13 +57,13 @@ https://stackoverflow.com/questions/19124148/modify-output-from-python-pandas-de
 Using a while loop we also present similar stats by flower type. Using the ```unique()``` function we extract the three flower types into a new variable ```unique_class``` and use that in a while loop along with the ```describe()``` function to extract the min, max, mean and standard deviation of each flower type and export it to the analysis.txt file.
 
 Following this we move on to generating various plots to graphically describe the data through histograms and scatterplots. 
-For the histograms we have four blocks of code - one for each of the attributes: Petal Length, Petal Width, Sepal Length and Sepal Width. The histogram code starts with creating a new list to store the data and populates it using a for loop that runs through the data set pulling out the data for each variable (e.g. Petal Length). the data is then sorted before generating the histogram using the ```sort()``` function. We then add a plot title and x and y labels before generating the plot and save it to our directory using ```plt.savefig()```. Finally we write a comment to the text file with the plot name for reference. 
+For the histograms we have four blocks of code - one for each of the attributes: Petal Length, Petal Width, Sepal Length and Sepal Width. The histogram code starts with creating a new list to store the data and populates it using a for loop that runs through the data set pulling out the data for each variable (e.g. Petal Length). The data is then sorted before generating the histogram using the ```sort()``` function. We then add a plot title and x and y labels before generating the plot and saving it to our directory using ```plt.savefig()```. Finally we write a comment to the text file with the plot name for reference. 
 Plots for the remaining three attributes (Petal Width, Sepal Length and Sepal Width) are created in a similar manner. But before creating each new plot we call ```plt.clf()``` to clear the previous plot and start fresh each time.
 
-Next we create two scatterplots to compare two sets of attributes - Petal Length/Petal Width and Sepal Length/Sepal Width. The blocks of code for these is quite similar to the histogram blocks of code but we use ```plt.scatter``` as opposed to ```plot.hist``` to generate the plots.
+Next we create two scatterplots to compare two sets of attributes - Petal Length/Petal Width and Sepal Length/Sepal Width. The blocks of code for these are quite similar to the histogram blocks of code but we use ```plt.scatter``` as opposed to ```plot.hist``` to generate the plots.
 This shows all the data in one easy to read plot but to expand on it we use seaborn to create two new plots and use different colours to differentiate by flower type. We define new variables for the data for each axis and add a title and label as before then plot the data using ```sns.scatterplot``` and pass the arguement ```hue=iris_csv.Class``` to let seaborn assign colours based on the ```Class``` (i.e. flower type). 
 
-The next plot we generate is a histogram comparing thePetal Length - for each flower type. To generate the data for the histogram we experimented with using ```.loc``` to return the required data into three separate lists (as opposed to the method used earlier to generate the individual histograms) with a list for each flower type. Once we have the data, the actual plotting code is similar to the above but plot the three sets of data using ```plt.hist``` for each one. This results in a single plot with three sets of data.
+The next plot we generate is a histogram comparing the Petal Length - for each flower type. To generate the data for the histogram we experimented with using ```.loc``` to return the required data into three separate lists (as opposed to the method used earlier to generate the individual histograms) with a list for each flower type. Once we have the data, the actual plotting code is similar to the above but plot the three sets of data using ```plt.hist``` for each one. This results in a single plot with three sets of data.
 
 The final plot we generate is a Heatmap using the seaborn module imported earlier. Seeing as we added the ```Class``` to our dataframe we must remove it before we can create the heatmap using ```.drop("Class", axes=1)``` to avoid a float error.
 https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
@@ -92,7 +92,7 @@ Finished writing to analysis.txt
 
 # 4. Results
 The results of the analysis are split between basic descriptive statistics of the data set, which are exported out to the analysis.txt file, and various plots of the data using Histograms, Scatterplots and a Heatmap. We also generate and export a correlation table, using Pearson's correlation techniques, to the analysis.txt file.   
-The results of the ```shape``` function show us that the data set has 150 rows and 5 columns. And the ```info()``` function tells us that each attribute (Sepal Length, Sepal Width etc.) has 150 values with no null values in any column.
+The results of the ```shape``` function show us that the data set has 150 rows and 5 columns. And the ```info()``` function tells us that each attribute (Sepal Length, Sepal Width etc.) has 150 values with no null values in any column.   
 ## 4.1. Descriptive Statistics
 Descriptive Statistics are first exported to the analysis.txt file for the entire data set. This gives an overall view of the min, max, mean and standard deviation for the four main data attributes - Petal Length, Petal Width, Sepal Length and Sepal Width.  We can read from the results for example that Sepal Length has a min and max length of 4.3 and 7.9cm respectively. The mean value for Sepal Length is 5.84cm and the standard deviation is 0.83cm. 
 Petal Length on the other hand has min and max values of 1 and 6.9cm with a mean of 3.76cm. We can see from the results how such a range gives a standard deviation of 1.76cm.
@@ -109,7 +109,7 @@ The plots for the other three variables all show non symmetrical distribution. I
 Referring back to our summary statistics we can see that the Iris-setosa family has min and max values of 1 and 1.9cm respectively which would explain why the plot looks as it does. The data from the other two flowers tend to show more normal plots with a lot more values appearing around the means of 4.2 and 5.6cm respectively.
 
 To expand on this analysis some more, we lastly generate a histogram plotting Petal Length values for all three flower types on a single plot. As well as showing the power of the plotting functions this also shows at a glance the frequency distribution of each flower type on a single plot. It's very easy to read and see how the three flower types compare against each other.   
-From this we can conclude that the Petal Length for the Iris-setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit.
+From this we can conclude that the Petal Length for the Iris-setosa is a lot smaller than the other two flower types and the values are within a small range of between 1 and 2cm. While the Iris-Versicolor and Iris-Virginia have much similar values and ranges and overlap quite a bit with all values in the range of 3 to 7cm.
 
 ## 4.3. Scatterplots
 Scatterplots can be used to indicate the relationships between two different variables and for our analysis we create two scatterplots showing the relationship between Petal Length and Petal Width and then the relationship between Sepal Width and Sepal Length. 
@@ -118,15 +118,15 @@ We can see a very linear progression of Petal Length and Petal Width indicating 
 
 However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two variables.
 
-To expand on these scatterplots we create two new plots showing the breakdown by flower type. From the Petal analysis we can see that all three flower types follow a lenear progression and that the Iris_setosa is by far the smaller flower with all of it's data points clustered in a small area. In contrast, the Iris-virginica is the largest flower, with the Iris-versicolor sitting in the middle however there is some over lap between the two.
-The Sepal analysis by flower type again shows the Iris-setosa out on its own but still showing a linear progression. It can be seen that the Iris-setosa has some of the smallest Sepal Lengths but also some of the largest Sepal Widths. The Iris-virginica and Iris-versicolor show a linear progression to some degree and tend to over lap quite a bit. They also tend to have more outliers than the Iris-setosa.
+To expand on these scatterplots we create two new plots showing the breakdown by flower type. From the Petal analysis we can see that all three flower types follow a linear progression and that the Iris_setosa is by far the smaller flower with all of it's data points clustered in a small area. In contrast, the Iris-virginica is the largest flower, with the Iris-versicolor sitting in the middle however there is some over lap between the two.
+The Sepal analysis by flower type again shows the Iris-setosa out on its own but still showing a linear progression. It can be seen that the Iris-setosa has some of the smallest Sepal Lengths but also some of the largest Sepal Widths. The Iris-virginica and Iris-versicolor show a linear progression to a lesser degree and tend to over lap quite a bit. They also tend to have more outliers than the Iris-setosa.
 
 ## 4.4. Heatmaps   
 Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares showing a strong relationship and the lighter yellow squares showing a weak relationship. 
 
 From the heatmap we can easily pick out which variables have a strong or a weak relationship. For example, we can see that there is a strong positive relationship between Petal Length and Petal Width (.96) meaning that as the Petal Length increases so does the Petal Width. 
 
-However we can also see that there is a very weak negative relationship between Sepal Width and Sepal Length (-.11) indicating that as one variable increases the other tends to decrease.
+However we can also see that there is a very weak negative relationship between Sepal Width and Sepal Length (-.11).
 
 ## 4.5. Correlations 
 As well as using the Heatmap described above to graphically represent correlations in the data we can also use the inbuilt ```corr()``` function to generate a table showing the same data. From this table (which is exported to the analysis.txt file) we can see the same correlations as in the Heatmap, such as seeing that the relationship between Petal Length and Petal Width is very strong at .96
@@ -143,7 +143,7 @@ As well as using the Heatmap described above to graphically represent correlatio
 | Petal_Length_Petal_Width_Scatterplot.png | Scatterplot plotting Petal Lengths and Petal Widths
 | Petal_Length_Comparison.png | Histogram comparing Petal Lengths 
 | Correlation_Heatmap.png | Heatmap plotting correlations
-| Petal_Length_Petal_Width_Scatterplot_Seaborn.png | Scatterplot plotting Pelat Lengths and Petal Widths by flower type
+| Petal_Length_Petal_Width_Scatterplot_Seaborn.png | Scatterplot plotting Petal Lengths and Petal Widths by flower type
 | Sepal_Length_Sepal_Width_Scatterplot_Seaborn.png | Scatterplot plotting Sepal Lengths and Sepal Widths by flower type
 
 # 6. Summary
