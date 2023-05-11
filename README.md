@@ -61,13 +61,14 @@ For the histograms we have four blocks of code - one for each of the attributes:
 Plots for the remaining three attributes (Petal Width, Sepal Length and Sepal Width) are created in a similar manner. But before creating each new plot we call ```plt.clf()``` to clear the previous plot and start fresh each time.
 
 Next we create two scatterplots to compare two sets of attributes - Petal Length/Petal Width and Sepal Length/Sepal Width. The blocks of code for these is quite similar to the histogram blocks of code but we use ```plt.scatter``` as opposed to ```plot.hist``` to generate the plots.
+This shows all the data in one easy to read plot but to expand on it we use seaborn to create two new plots and use different colours to differentiate by flower type. We define new variables for the data for each axis and add a title and label as before then plot the data using ```sns.scatterplot``` and pass the arguement ```hue=iris_csv.Class``` to let seaborn assign colours based on the ```Class``` (i.e. flower type). 
 
 The next plot we generate is a histogram comparing thePetal Length - for each flower type. To generate the data for the histogram we experimented with using ```.loc``` to return the required data into three separate lists (as opposed to the method used earlier to generate the individual histograms) with a list for each flower type. Once we have the data, the actual plotting code is similar to the above but plot the three sets of data using ```plt.hist``` for each one. This results in a single plot with three sets of data.
 
 The final plot we generate is a Heatmap using the seaborn module imported earlier. Seeing as we added the ```Class``` to our dataframe we must remove it before we can create the heatmap using ```.drop("Class", axes=1)``` to avoid a float error.
 https://stackoverflow.com/questions/8420143/valueerror-could-not-convert-string-to-float-id
 We then generate the heatmap using ```sns.heatmap``` and pass the values ```method='pearson'``` to use Pearson's correlation techniques and also specify the colour map to use with ```cmap="YlGnBl"```.
-As can be seen in the analysis.py file we need a lot less lines of code to generate this plot using seaborn than we do generating the histograms or scatterplots using matplotlib which show the power of seaborn.
+Again, as can be seen in the analysis.py file we need a lot less lines of code to generate this plot using seaborn than we do generating the histograms or scatterplots using matplotlib which show the power of seaborn.
 
 We create a new function ```text_write``` that is used whenever we want to write data to the text file. This function opens the file and writes the data. Using a function like this saves a number of lines of code and simplifies the script. In order to write the data back to the text file we need to convert it to a string type each time and this is completed using ```to_string()```.
 https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file   
@@ -117,6 +118,9 @@ We can see a very linear progression of Petal Length and Petal Width indicating 
 
 However we also see that the Sepal Width and Sepal Length scatterplot is a lot less linear which indicates little or no relationship between the two variables.
 
+To expand on these scatterplots we create two new plots showing the breakdown by flower type. From the Petal analysis we can see that all three flower types follow a lenear progression and that the Iris_setosa is by far the smaller flower with all of it's data points clustered in a small area. In contrast, the Iris-virginica is the largest flower, with the Iris-versicolor sitting in the middle however there is some over lap between the two.
+The Sepal analysis by flower type again shows the Iris-setosa out on its own but still showing a linear progression. It can be seen that the Iris-setosa has some of the smallest Sepal Lengths but also some of the largest Sepal Widths. The Iris-virginica and Iris-versicolor show a linear progression to some degree and tend to over lap quite a bit. They also tend to have more outliers than the Iris-setosa.
+
 ## 4.4. Heatmaps   
 Finally, using the features of Seaborn we plot a heatmap. We use this heatmap to represent the correlation (Pearson's) between the variables Petal Length, Petal Width, Sepal Length and Sepal Width. This shows the strength of the relationships between each variable. The Heatmap is colour coordinated with the darker blue squares showing a strong relationship and the lighter yellow squares showing a weak relationship. 
 
@@ -139,6 +143,8 @@ As well as using the Heatmap described above to graphically represent correlatio
 | Petal_Length_Petal_Width_Scatterplot.png | Scatterplot plotting Petal Lengths and Petal Widths
 | Petal_Length_Comparison.png | Histogram comparing Petal Lengths 
 | Correlation_Heatmap.png | Heatmap plotting correlations
+| Petal_Length_Petal_Width_Scatterplot_Seaborn.png | Scatterplot plotting Pelat Lengths and Petal Widths by flower type
+| Sepal_Length_Sepal_Width_Scatterplot_Seaborn.png | Scatterplot plotting Sepal Lengths and Sepal Widths by flower type
 
 # 6. Summary
 Our analysis of the iris data set made use of some of the standard/built-in functionality of Python as well as additional modules that were imported such as numpy, seaborn, pandas and matplotlib. By making use of these features we were able to generate descriptive statistics of the data set as a whole as well as on the individual flower types and do comparisons of the results. This data was all written to the analysis.txt file.   
