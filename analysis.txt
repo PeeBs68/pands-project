@@ -53,7 +53,7 @@ The following plots are created and stored in this same directory
 	Petal_Width_Histogram.png
 	Sepal_Length_Sepal_Width_Scatterplot.png
 	Petal_Length_Petal_Width_Scatterplot.png
-	Petal_Length_Petal_Width_Scatterplot - by flower types.png
+	Petal_Length_Petal_Width_Scatterplot - by flower type.png
 	Sepal_Length_Sepal_Width_Scatterplot - by flower type.png
 	Petal_Length_Comparison_Histogram.png
 	Correlation_Heatmap.png

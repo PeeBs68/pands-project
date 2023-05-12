@@ -89,7 +89,7 @@ outputs.append(output_data)
 sepal_l = []
 for iris in iris_csv['Sepal Length']:
     sepal_l.append(iris)
-#Sort the lsit before creating the histogram
+#Sort the list before creating the histogram
 sepal_l.sort()
 #Add title and labels
 plt.title("Sepal Length")
@@ -98,7 +98,7 @@ plt.ylabel("Frequency")
 plt.hist(sepal_l)
 #Save the file
 plt.savefig("Sepal_Length_Histogram.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tSepal_Length_Histogram.png"
 text_write(data)
 
@@ -114,7 +114,7 @@ plt.xlabel("Width (cm)")
 plt.ylabel("Frequency")
 plt.hist(sepal_w)
 plt.savefig("Sepal_Width_Histogram.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tSepal_Width_Histogram.png"
 text_write(data)
 
@@ -129,7 +129,7 @@ plt.xlabel("Length (cm)")
 plt.ylabel("Frequency")
 plt.hist(petal_l)
 plt.savefig("Petal_Length_Histogram.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tPetal_Length_Histogram.png"
 text_write(data)
 
@@ -144,7 +144,7 @@ plt.xlabel("Width (cm)")
 plt.ylabel("Frequency")
 plt.hist(petal_w)
 plt.savefig("Petal_Width_Histogram.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tPetal_Width_Histogram.png"
 text_write(data)
 
@@ -156,7 +156,7 @@ plt.xlabel('Sepal length (cm)')
 plt.ylabel('Sepal Width (cm)')
 #plt.legend()
 plt.savefig("Sepal_Length_Sepal_Width_Scatterplot.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tSepal_Length_Sepal_Width_Scatterplot.png"
 text_write(data)
 
@@ -168,38 +168,40 @@ plt.xlabel('Petal length (cm)')
 plt.ylabel('Petal Width (cm)')
 #plt.legend()
 plt.savefig("Petal_Length_Petal_Width_Scatterplot.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tPetal_Length_Petal_Width_Scatterplot.png"
 text_write(data)
 
-#Scatterplots using seaborn with colours for each flower type
+#Create Scatterplots using seaborn with colours for each flower type
+#Petal Length and Petal Width comparison
 plt.clf()
 #Define the data for x and y axis
 x_axis = iris_csv['Petal Length']
 y_axis = iris_csv['Petal Width']
-#Add a title and lables
+#Add a title and labels
 plt.title("Petal length | Petal Width")
 plt.xlabel('Petal Length (cm)')
 plt.ylabel('Petal Width (cm)')
 #Create and save the plot
 sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
 plt.savefig("Petal_Length_Petal_Width_Scatterplot_Seaborn.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tPetal_Length_Petal_Width_Scatterplot - by flower type.png"
 text_write(data)
 
+#Sepal Length and Sepal Width comparison
 plt.clf()
 #Define the data for x and y axis
 x_axis = iris_csv['Sepal Length']
 y_axis = iris_csv['Sepal Width']
-#Add a title and lables
+#Add a title and labels
 plt.title("Sepal length | Sepal width")
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
 #Create and save the plot
 sns.scatterplot(x=x_axis, y=y_axis, hue=iris_csv.Class, s=90)
 plt.savefig("Sepal_Length_Sepal_Width_Scatterplot_Seaborn.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tSepal_Length_Sepal_Width_Scatterplot - by flower type.png"
 text_write(data)
 
@@ -222,11 +224,11 @@ plt.hist(iris_virginica["Petal Length"],label='iris_virginica')
 plt.hist(iris_versicolor["Petal Length"],label='iris_versicolor')
 plt.legend()
 plt.savefig("Petal_Length_Comparison_Histogram.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tPetal_Length_Comparison_Histogram.png"
 text_write(data)
 
-#Plotting a Heatmap using seaborn to show correlation with inspiration taken from the following sources:
+#Plotting a Heatmap using seaborn to show correlations with inspiration taken from the following sources:
 #https://practicaldatascience.co.uk/data-science/how-to-calculate-pearson-correlation-in-pandas
 #https://blog.quantinsti.com/creating-heatmap-using-python-seaborn/
 #https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
@@ -236,7 +238,7 @@ iris_csv_sns = iris_csv.drop("Class", axis=1)
 sns.heatmap(iris_csv_sns.corr(method='pearson'), cmap="YlGnBu", annot=True); 
 plt.title("Heatmap - Pearsons Correllation")
 plt.savefig("Correlation_Heatmap.png")
-#Wtite to the text file
+#Write to the text file
 data = "\n\tCorrelation_Heatmap.png\n\n"
 text_write(data)
 
@@ -251,7 +253,7 @@ output_data = (f"Writing Person's Correlation data to {FILENAME}")
 outputs.append(output_data)
 
 #Append the current completed action to the outputs list for printing upon script completion
-output_data = (f"Finished writing to {FILENAME}")
+output_data = (f"Script complete and finished writing to {FILENAME}")
 outputs.append(output_data)
 
 #Print the output list which informs the user what the script has done
